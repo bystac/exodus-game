@@ -1,1 +1,2 @@
-# exodus-game
+# Exodus - 40 years in the desert
+
