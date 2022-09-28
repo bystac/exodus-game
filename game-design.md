@@ -77,8 +77,9 @@ Then the next turn is able to begin.
 
  
 #### After Each Turn
-	Each turn consists of an entire year (12 months) so there are a LOT of things that can happen in that time.
-	If the player has completed each option and raised their Piety for that year then a few things can happen.
+
+Each turn consists of an entire year (12 months) so there are a LOT of things that can happen in that time.
+If the player has completed each option and raised their Piety for that year then a few things can happen.
  
 *	Manna is found:   Some turns will not show any Manna and people will start to starve.  As long as the player has collected enough Manna they can either eat it or share it.  When “Manna is Found” shows up before the next turn then the player will get an option to gather it.
 	A random amount will appear in the player inventory that they will be able to share or eat.  Depending on what they choose, their piety will increase or stay the same.
@@ -97,7 +98,8 @@ The player will be able to trade the items they create with other people.  Each 
 ## The Game World
 
 ### Overview
-	As the game will mainly be text based, there might be a 2D map with regions on it.  This is mainly to show the player how far the 40 years has gotten them before they reach the promise land.
+
+As the game will mainly be text based, there might be a 2D map with regions on it.  This is mainly to show the player how far the 40 years has gotten them before they reach the promise land.
  
 ### The  Map
 
@@ -121,51 +123,57 @@ The 2D map of the area will be shown with numbered sections much like this “Co
 ### Narrative
 
 #### Intro and Overview
-	The story leads the player toward the goal of helping people get to the promised land.  Along the way they grow and survive and have their own individual stories.
+
+The story leads the player toward the goal of helping people get to the promised land.  Along the way they grow and survive and have their own individual stories.
  
 #### Back Story
-	After leaving Egypt the many tribes headed out to find the promised land.  They had a goal and wanted to reach their destination.  This is the story of how they got there.
+
+After leaving Egypt the many tribes headed out to find the promised land.  They had a goal and wanted to reach their destination.  This is the story of how they got there.
  
 #### Plot Elements
 
 * Tribal leaders wanting to protect their own people.
  
-*	Egyptian army chasing them.
+* Egyptian army chasing them.
  
-*	The Red Sea.
+* The Red Sea.
  
-*	The Mountain.
+* The Mountain.
  
-*	Finding Manna all over the ground.
+* Finding Manna all over the ground.
  
-*	Sickness.
+* Sickness.
  
-*	Hunger.
+* Hunger.
  
-*	Finding water.
+* Finding water.
  
-*	Friendships.
+* Friendships.
  
-*	Marriages.
+* Marriages.
  
-*	more...
+* more...
 
 
 ## Game Characters
  
 ### Character Style (renaissance art)
-	Renaissance Art:  Your boy/girl will be using the images of that time.
+
+Renaissance Art:  Your boy/girl will be using the images of that time.
  
 ### Creating a Player Account
 
 #### Player Start 
-	The player will choose a boy or girl that is not affiliated with biblical heroes.  There will be images of kids that they can choose from.  There will be several to choose from and they will all be about 15 years old.  (Because the journey will take 40 years).
-	The player will also have stat points to add to their stats by selecting where they want to place those points.
+
+The player will choose a boy or girl that is not affiliated with biblical heroes.  There will be images of kids that they can choose from.  There will be several to choose from and they will all be about 15 years old.  (Because the journey will take 40 years).
+The player will also have stat points to add to their stats by selecting where they want to place those points.
  
 #### Personalize Your Character
-	The only way to personalize the character is adding points to the beginning stats.  Each stat will have a bonus that can be chosen in the beginning of the game.
-	Adding points to different stats will also describe how those added points will effect the gameplay.  Letting the player know that adding points to strength will allow them to carry more on their back.
- 
+
+The only way to personalize the character is adding points to the beginning stats.  Each stat will have a bonus that can be chosen in the beginning of the game.
+Adding points to different stats will also describe how those added points will effect the gameplay.  Letting the player know that adding points to strength will allow them to carry more on their back.
+
+
 ### Stats
 
 These attributes will have a few points in the beginning of the game.  The player will also be able to distribute the allotment at the beginning of the game and possibly after each turn.  These stats will effect the choices that the player makes during each turn.
@@ -186,6 +194,7 @@ These attributes will have a few points in the beginning of the game.  The playe
 ## User Interface
  
 ### Overview
+
 The game will be mainly text based, so the player Dashboard needs to look very functional and appealing. Lots of Icons.
  
 ### Dashboard
@@ -199,6 +208,7 @@ The dashboard will show players stats and inventory.  It will also show the play
 * Map - Full map with their current location on it.
  
 ### User Interface (HUD: Heads Up Display)
+
 The main interface that is always on screen while playing the game.
  
 * Current Story line Event - What you are suppose to do next.
@@ -228,16 +238,18 @@ The character that the player chooses at the beginning of the game will have a f
 Choosing options that show up in each turn will make the player decide on who to prioritize.
  
 ### Character Growth
-	The Player will make harder and harder choices and the stakes will also become more difficult.  People will be dying and the piety level will need to be increased.
-	Each time the player increases their stats they will need to figure out what stats will help them in the next turn.  This causes the player to think a few steps ahead.
+
+The Player will make harder and harder choices and the stakes will also become more difficult.  People will be dying and the piety level will need to be increased.
+Each time the player increases their stats they will need to figure out what stats will help them in the next turn.  This causes the player to think a few steps ahead.
  
 ### Story
-	Main story of survival in the desert and smaller stories from individuals from each tribe.  This includes the family of the character that the player chooses.  Everyone went through this ordeal in their own way and needed help from others.
+
+Main story of survival in the desert and smaller stories from individuals from each tribe.  This includes the family of the character that the player chooses.  Everyone went through this ordeal in their own way and needed help from others.
  
 ### Training Level
-	The first few turns will walk the player through each of the different tasks and choices that they will need to make.  This will come in the form of slides and pop ups.  Showing the player exactly how each of the systems work and how to use the trade system.
+The first few turns will walk the player through each of the different tasks and choices that they will need to make.  This will come in the form of slides and pop ups.  Showing the player exactly how each of the systems work and how to use the trade system.
  
 ### All Other Features
-	Everything in the single player game is defined in the “Gameplay Features” of this Game Design Document. (SEE FEATURES).
+Everything in the single player game is defined in the “Gameplay Features” of this Game Design Document. (SEE FEATURES).
 
 
