@@ -99,7 +99,7 @@ The player will be able to trade the items they create with other people.  Each 
 
 ### Overview
 
-As the game will mainly be text based, there might be a 2D map with regions on it.  This is mainly to show the player how far the 40 years has gotten them before they reach the promise land.
+As the game will mainly be text based, there might be a 2D map with regions on it.  This is mainly to show the player how far the 40 years has gotten them before they reach the promise land. The Israeli Camp inlustration is very important and many interactions will happen inside the camp [See description of the camp](/story/camp.md)
  
 ### The  Map
 
