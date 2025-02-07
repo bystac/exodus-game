@@ -40,11 +40,32 @@ Use your terminal and run the commands after each instruction.
 
 ## 👤 Authors
 
-- Lead Game design and programmer - Shachar Iphraimov
-- Programmer and Marketing - Gabi
-- Programmer - Sagi 
-- Programmer - Shalev
-- Programmer - Stav
+- Lead Game Designer - Shachar Iphraimov
+- Tech Team - Core Development (5 members)
+  - Main loop (core gameplay mechanics)
+  - Mod Engine/Dialogs (narrative engine, branching choices, allowing community-driven content, graphics?)
+  - Script engine (quest logic, NPC behaviors)
+  - UI/Styling (UX, animations, UI responsiveness)
+  - Monetization (in-app purchases, ads, premium content)
+- Creative Team - Art & Storytelling (6 members)
+  - Lead Writer – Story, Lore, Dialogs
+  - Writers squad - English speaking Yeshiva boys
+  - Game Designer – Gameplay Mechanics, Level Design
+  - UI/UX Designer – Interfaces, Menus, Styling
+  - Environment/3D Artist OR 2D Illustrator (for world-building)
+  - Animator/VFX Artist (for smooth animations and effects)
+  - Sound & Music - outsoruced?
+- Media & Marketing Team – Growth & Engagement (6 members)
+  - Video Editor – Trailers & Social Media
+  - Social Media Manager – Twitter, TikTok, Instagram
+  - Graphic Designer – Marketing Creatives (Ads, Banners, Posters)
+  - Copywriter & Content Strategist – Blogs, Newsletters, SEO
+  - User Acquisition Specialist – Paid Ads (MMP, Singular, Appsflyer, Facebook, Google, TikTok, etc.)
+  - Community Manager – Discord, Forums, Reddit, Twitch & Influencers
+  - Affiliate Manager – Partnerships & Performance Marketing
+- Operations Team – Business & Finance
+  - Finance, HR, Admin, Legal Counsel
+
 
 
 ## 🤝 Contributing
