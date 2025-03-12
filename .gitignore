@@ -1,9 +1,84 @@
 
-node_modules/
-dist/
+## Java
+*.class
+*.war
+*.ear
+hs_err_pid*
+
+## Gradle
+/build/
+.gradle/
+gradle-app.setting
+local.properties
+
+## Android
+/android/build/
+/android/libs/
+/android/release/
+/android/local.properties
+/android/proguard/
+
+## iOS
+/ios/build/
+/ios/Release/
+/ios/libs/
+/ios/local.properties
+
+## HTML
+/html/build/
+/html/war/
+/html/gwt-unitCache/
+/html/war/WEB-INF/deploy/
+/html/war/assets/
+/html/.gwt/
+.gwt-tmp/
+
+## Desktop
+/desktop/build/
+/desktop/libs/
+
+## Core
+/core/build/
+/core/libs/
+
+## IntelliJ
 .idea/
-.DS_Store
+*.ipr
+*.iws
+*.iml
+out/
+
+## Eclipse
+.classpath
+.project
+.metadata/
+bin/
+tmp/
+*.tmp
+*.bak
+*.swp
+*~.nib
+.settings/
+.loadpath
+.externalToolBuilders/
+*.launch
+
+## NetBeans
+nbproject/private/
 build/
+nbbuild/
+dist/
+nbdist/
+nbactions.xml
+nb-configuration.xml
+
+## OS Specific
+.DS_Store
+Thumbs.db
+
+## Misc
+*.log
+/target/
 
 # Prerequisites
 *.d
