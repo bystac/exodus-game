@@ -1,0 +1,43 @@
+buildscript {
+  repositories {
+    mavenCentral()
+    maven { url "https://oss.sonatype.org/content/repositories/snapshots/" }
+    maven { url "https://s01.oss.sonatype.org/content/repositories/snapshots/" }
+  }
+  dependencies {
+    classpath "com.mobidevelop.robovm:robovm-gradle-plugin:$robovmVersion"
+  }
+}
+apply plugin: 'robovm'
+
+repositories {
+    mavenCentral()
+    maven { url "https://oss.sonatype.org/content/repositories/snapshots/" }
+    maven { url "https://s01.oss.sonatype.org/content/repositories/snapshots/" }
+}
+
+[compileJava, compileTestJava]*.options*.encoding = 'UTF-8'
+
+ext {
+  mainClassName = "biz.dvlop.exudos.IOSLauncher"
+}
+
+launchIPhoneSimulator.dependsOn build
+launchIPadSimulator.dependsOn build
+launchIOSDevice.dependsOn build
+createIPA.dependsOn build
+
+eclipse.project {
+  name = appName + "-ios"
+  natures 'org.robovm.eclipse.RoboVMNature'
+}
+
+dependencies {
+  implementation project(':core')
+  implementation "com.badlogicgames.gdx:gdx-backend-robovm-metalangle:$gdxVersion"
+  implementation "com.badlogicgames.gdx:gdx-platform:$gdxVersion:natives-ios"
+  implementation "com.badlogicgames.gdx:gdx-box2d-platform:$gdxVersion:natives-ios"
+  implementation "com.badlogicgames.gdx:gdx-freetype-platform:$gdxVersion:natives-ios"
+  implementation "com.mobidevelop.robovm:robovm-cocoatouch:$robovmVersion"
+  implementation "com.mobidevelop.robovm:robovm-rt:$robovmVersion"
+}
