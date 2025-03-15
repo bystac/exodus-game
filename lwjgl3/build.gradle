@@ -2,7 +2,7 @@ apply plugin: "kotlin"
 apply plugin: "application"
 
 sourceSets.main.resources.srcDirs += [ rootProject.file('assets').path ]
-mainClassName = 'com.exodus.game.lwjgl3.Lwjgl3Launcher'
+mainClassName = 'biz.dvlop.exodus.launchers.Lwjgl3Launcher'
 eclipse.project.name = appName + '-lwjgl3'
 
 dependencies {
@@ -24,6 +24,11 @@ tasks.withType(org.jetbrains.kotlin.gradle.tasks.KotlinCompile).configureEach {
 run {
   workingDir = rootProject.file('assets').path
   setIgnoreExitValue(true)
+
+  // Add macOS specific JVM arguments when running on macOS
+  if (System.getProperty('os.name').toLowerCase().contains('mac')) {
+    jvmArgs = ['-XstartOnFirstThread']
+  }
 }
 
 jar {

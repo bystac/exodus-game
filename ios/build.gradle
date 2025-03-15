@@ -10,7 +10,7 @@ repositories {
 [compileJava, compileTestJava]*.options*.encoding = 'UTF-8'
 
 ext {
-  mainClassName = "biz.dvlop.exudos.IOSLauncher"
+  mainClassName = "biz.dvlop.exodus.launchers.IOSLauncher"
 }
 
 dependencies {

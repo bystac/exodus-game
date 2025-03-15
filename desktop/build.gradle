@@ -20,7 +20,7 @@ tasks.withType(org.jetbrains.kotlin.gradle.tasks.KotlinCompile).configureEach {
 }
 
 application {
-    mainClass = "com.exodus.game.desktop.DesktopLauncher"
+    mainClass = "biz.dvlop.exodus.launchers.DesktopLauncher"
 }
 
 // Packaging configurations for desktop JAR
