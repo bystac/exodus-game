@@ -1,20 +1,18 @@
-# EditorConfig: http://EditorConfig.org
-
-# Top-most EditorConfig file
+# https://editorconfig.org
 root = true
 
 [*]
-charset = utf-8
+indent_style = space
 end_of_line = lf
+charset = utf-8
+trim_trailing_whitespace = true
 insert_final_newline = true
 
-
-[*.{py,json,sh,html}]
-indent_style = tab
-tab_width = 4
+[*.{java,scala,groovy,kt,kts}]
 indent_size = 4
-trim_trailing_whitespace = true
 
-[{package.json,.travis.yml}]
-indent_style = space
+[*.gradle]
 indent_size = 2
+
+[*.md]
+trim_trailing_whitespace = false

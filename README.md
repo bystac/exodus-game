@@ -5,36 +5,60 @@ Historical Adventure RPG
 ## Table of Contents
 
 - [Technologies Used](#Technologies-Used)
-- [Install and Run](#How-to-Install-and-Run-in-Your-Computer)
-- [Acknowledgments](#Acknowledgments)
+- [Prerequisites](#Prerequisites)
+- [Build and Run](#Build-and-Run)
+- [Authors](#Authors)
+- [Contributing](#Contributing)
+- [License](#License)
 
 ### Technologies Used
 
-- Node, npm
-- Phaser 3
-- JavaScript
-- Webpack
-- Babel
-- Jest
-- ESlint
-- HTML/CSS
+- Kotlin
+- libGDX
+- MetalANGLE (iOS)
+- KTX Libraries
+- Gradle
+- OpenGL ES 3.0
+- LWJGL3 (Desktop)
 
-[Up](#Table-of-Contents)
+### Prerequisites
 
-## How to Install and Run in Your Computer
+- JDK 17 or newer
+- Android SDK (for Android builds)
+- Xcode and macOS (for iOS builds)
+- Gradle (included wrapper)
 
-To run the scripts **npm** is required. To get npm you have to install [Node.js](https://nodejs.org). Follow the installation instructions for your system Mac, Linux or Windows.
+### Build and Run
 
-Use your terminal and run the commands after each instruction.
+#### Desktop
+```bash
+./gradlew desktop:run
+```
 
-| Command                                               | Description                                           |
-| ----------------------------------------------------- | ----------------------------------------------------- |
-| `git clone https://github.com/bystac/exodus-game.git` | Clone the repository to you computer                  |
-| `cd exodus-game`                                      | Navigate to the newly created folder                  |
-| `npm install`                                         | Install dependencies and launch browser with examples |
-| `npm start`                                           | Makes the build and starts the development server     |
-|                                                       | Press `Ctrl + c` to kill **http-server** process      |
-| `http://localhost:8000`                               | Visit this link to play the game                      |
+#### Android
+```bash
+./gradlew android:installDebug android:run
+```
+
+#### iOS
+Requires macOS with Xcode installed and an Apple Developer account for device deployment.
+
+```bash
+# For Simulator
+./gradlew ios:launchIPhoneSimulator
+
+# For Device
+./gradlew ios:launchIOSDevice
+```
+
+### Performance Features
+
+- **iOS**: Uses MetalANGLE backend for optimal Metal-based rendering
+- **Android**: OpenGL ES 3.0 support for enhanced graphics
+- **Desktop**: LWJGL3 with optimized settings
+- **Cross-Platform**: Single codebase targeting all platforms
+- **KTX Extensions**: Idiomatic Kotlin code for better performance
+
 
 [Up](#Table-of-Contents)
 
@@ -65,8 +89,6 @@ Use your terminal and run the commands after each instruction.
   - Affiliate Manager – Partnerships & Performance Marketing
 - Operations Team – Business & Finance
   - Finance, HR, Admin, Legal Counsel
-
-
 
 ## 🤝 Contributing
 
