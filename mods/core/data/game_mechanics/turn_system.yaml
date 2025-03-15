@@ -1,0 +1,183 @@
+turn_system:
+  game_length:
+    total_years: 40  # Total turns in the game
+    action_points_per_year: 12  # Representing months
+    minimum_years_required: 40  # Must complete full journey
+
+  action_points:
+    base_points_per_turn: 12
+    carryover_allowed: false  # Points reset each year/turn
+
+    # Action point modifiers based on traits
+    trait_modifiers:
+      "Swift Runner":  # Naphtali trait
+        travel_cost: -1
+      "Desert Survivor":
+        survival_actions: -1
+      "Priestly Heritage":  # Levi trait
+        ritual_actions: -1
+      "Warrior Spirit":  # Gad trait
+        combat_actions: -1
+
+  action_costs:
+    # Movement Actions
+    travel:
+      base_cost: 2  # Base cost to move to adjacent region
+      modifiers:
+        desert_terrain: +1
+        mountain_terrain: +2
+        known_route: -1
+        tribal_territory: -1
+
+    # Resource Actions
+    gather_manna:
+      base_cost: 1
+      modifiers:
+        skilled_gatherer: -0.5
+        sabbath: "blocked"  # Cannot gather on sabbath
+
+    water_collection:
+      base_cost: 1
+      modifiers:
+        drought_condition: +1
+        at_water_source: -0.5
+
+    # Combat Actions
+    battle_participation:
+      base_cost: 3
+      modifiers:
+        warrior_trait: -1
+        wounded_condition: +2
+
+    # Religious Actions
+    prayer:
+      base_cost: 1
+      modifiers:
+        faithful_trait: -0.5
+        at_holy_site: -0.5
+
+    tabernacle_service:
+      base_cost: 2
+      requirements:
+        tribe: "levi"
+      modifiers:
+        priestly_trait: -1
+
+    # Social Actions
+    tribal_council:
+      base_cost: 2
+      modifiers:
+        leadership_role: -1
+        tribal_elder: -1
+
+    teach_torah:
+      base_cost: 2
+      requirements:
+        min_wisdom: 5
+      modifiers:
+        levite: -1
+        scholar_trait: -1
+
+    # Crafting Actions
+    craft_items:
+      base_cost: 2
+      modifiers:
+        craftsman_trait: -1
+        has_materials: -0.5
+
+    # Special Events
+    participate_in_event:
+      base_cost: 2  # Standard event participation
+      major_event: 3  # Major biblical events
+      modifiers:
+        relevant_trait: -1
+
+  turn_structure:
+    phases:
+      1_planning:
+        name: "Year Planning"
+        description: "Review available actions and resources"
+        cost: 0  # Free action
+
+      2_tribal_matters:
+        name: "Tribal Affairs"
+        description: "Handle tribal responsibilities and relationships"
+        required: true
+        min_cost: 1
+
+      3_main_actions:
+        name: "Monthly Actions"
+        description: "Perform chosen actions with remaining points"
+        points_available: "remaining"
+
+      4_year_end:
+        name: "Year Conclusion"
+        description: "Handle year-end events and consequences"
+        cost: 0  # Free phase
+
+  year_events:
+    scheduled_events:  # Major biblical events that must occur in specific years
+      year_1:
+        - "red_sea_crossing"
+        - "manna_discovery"
+      year_2:
+        - "twelve_spies"
+      year_40:
+        - "preparation_for_canaan"
+
+    random_events:  # Events that can occur in any year
+      chances_per_year: 2
+      categories:
+        tribal_events: 0.3
+        survival_challenges: 0.4
+        divine_interventions: 0.2
+        character_events: 0.1
+
+  progression_rules:
+    requirements_per_phase:
+      early_exodus:  # Years 1-10
+        min_piety: 20
+        survival_rate: 0.8
+
+      wilderness_wandering:  # Years 11-30
+        min_piety: 40
+        tribal_harmony: 0.6
+
+      approach_to_canaan:  # Years 31-40
+        min_piety: 60
+        combat_readiness: 0.7
+
+    victory_conditions:
+      required:
+        - complete_40_years
+        - min_piety_score: 90
+        - tribal_survival_rate: 0.6
+      bonus:
+        high_tribal_unity: "+10 victory points"
+        all_quests_complete: "+20 victory points"
+        no_major_sins: "+15 victory points"
+
+  action_restrictions:
+    sabbath_rules:
+      restricted_actions: ["gather_manna", "craft_items", "trade"]
+      bonus_actions: ["prayer", "study_torah"]
+
+    tribal_limitations:
+      levi:
+        restricted: ["combat", "territorial_claims"]
+        bonus: ["religious_duties", "teaching"]
+
+    piety_requirements:
+      min_piety_for_holy_tasks: 30
+      min_piety_for_leadership: 40
+
+  resource_management:
+    manna_rules:
+      gather_limit_per_action: 3
+      spoils_next_turn: true
+      sabbath_double_portion: true
+
+    water_rules:
+      base_consumption: 1
+      desert_penalty: +1
+      oasis_bonus: -1

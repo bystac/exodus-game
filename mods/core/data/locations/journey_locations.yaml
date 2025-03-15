@@ -1,0 +1,105 @@
+locations:
+  egypt:
+    id: "loc_egypt"
+    name: "Land of Egypt"
+    description: "The land of bondage, where the Israelites were enslaved"
+    resources:
+      - water
+      - food
+      - gold
+    danger_level: 2
+
+  red_sea:
+    id: "loc_red_sea"
+    name: "Red Sea"
+    description: "The vast sea where God performed the miracle of splitting the waters"
+    resources:
+      - fish
+      - water
+    danger_level: 5
+    special_events:
+      - "evt_red_sea_crossing"
+
+  wilderness_of_sin:
+    id: "loc_sin_wilderness"
+    name: "Wilderness of Sin"
+    description: "Desert region between Elim and Sinai, where manna first appeared"
+    resources:
+      - manna
+      - water_springs
+    danger_level: 3
+    special_events:
+      - "evt_manna_discovery"
+
+  marah:
+    id: "loc_marah"
+    name: "Waters of Marah"
+    description: "Location of bitter waters that Moses sweetened with a tree"
+    resources:
+      - bitter_water
+      - healing_trees
+    danger_level: 2
+    special_events:
+      - "evt_marah_waters"
+
+  rephidim:
+    id: "loc_rephidim"
+    name: "Rephidim"
+    description: "Site of battle with Amalek and where water came from the rock"
+    resources:
+      - water_rock
+      - strategic_high_ground
+    danger_level: 4
+    special_events:
+      - "evt_amalek_battle"
+
+  mount_sinai:
+    id: "loc_sinai"
+    name: "Mount Sinai"
+    description: "The holy mountain where God gave the Ten Commandments"
+    resources:
+      - stone_tablets
+      - water_springs
+    danger_level: 1
+    special_events:
+      - "evt_golden_calf"
+      - "evt_commandments"
+
+  kadesh_barnea:
+    id: "loc_kadesh"
+    name: "Kadesh-Barnea"
+    description: "Major encampment where the spies were sent from"
+    resources:
+      - water_wells
+      - grazing_land
+    danger_level: 2
+    special_events:
+      - "evt_spies_return"
+
+  wilderness_wandering:
+    id: "loc_wilderness"
+    name: "Wilderness Areas"
+    description: "Various locations during the 40 years of wandering"
+    resources:
+      - manna
+      - water_springs
+      - wild_game
+    danger_level: 3
+    random_events:
+      - "evt_serpent_plague"
+      - "evt_korah_rebellion"
+
+  promised_land:
+    id: "loc_canaan"
+    name: "Promised Land"
+    description: "The land flowing with milk and honey"
+    resources:
+      - milk
+      - honey
+      - fruits
+      - grains
+    danger_level: 4
+    victory_location: true
+    requirements:
+      min_piety: 90
+      year: 40

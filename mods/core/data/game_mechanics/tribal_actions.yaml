@@ -1,0 +1,195 @@
+tribal_actions:
+  # Reuben - Firstborn Tribe
+  reuben:
+    unique_actions:
+      tribal_leadership:
+        cost: 2
+        description: "Exercise firstborn authority in tribal matters"
+        effects:
+          tribal_influence: +2
+          leadership_experience: +1
+
+      cattle_management:
+        cost: 1
+        description: "Manage tribal herds efficiently"
+        effects:
+          resources: +2
+          tribal_prosperity: +1
+
+  # Levi - Priestly Tribe
+  levi:
+    unique_actions:
+      perform_sacrifices:
+        cost: 2
+        description: "Conduct sacred rituals in the Tabernacle"
+        requirements:
+          min_piety: 30
+        effects:
+          communal_piety: +3
+          personal_piety: +2
+
+      teach_law:
+        cost: 2
+        description: "Instruct people in Torah and traditions"
+        effects:
+          tribal_wisdom: +2
+          influence: +1
+
+  # Judah - Royal Tribe
+  judah:
+    unique_actions:
+      lead_army:
+        cost: 3
+        description: "Lead military campaigns"
+        effects:
+          combat_experience: +3
+          leadership: +2
+
+      royal_judgment:
+        cost: 2
+        description: "Make important tribal decisions"
+        effects:
+          authority: +2
+          tribal_unity: +1
+
+  # Issachar - Scholars
+  issachar:
+    unique_actions:
+      study_stars:
+        cost: 2
+        description: "Study astronomical patterns for calendar"
+        effects:
+          knowledge: +2
+          wisdom: +1
+
+      provide_counsel:
+        cost: 1
+        description: "Give strategic advice to other tribes"
+        effects:
+          influence: +2
+          tribal_relations: +1
+
+  # Zebulun - Merchants
+  zebulun:
+    unique_actions:
+      establish_trade:
+        cost: 2
+        description: "Set up trade routes with nearby regions"
+        effects:
+          resources: +3
+          tribal_wealth: +2
+
+      maritime_expedition:
+        cost: 3
+        description: "Explore coastal areas for resources"
+        effects:
+          resources: +4
+          navigation_skill: +1
+
+  # Dan - Judges
+  dan:
+    unique_actions:
+      resolve_disputes:
+        cost: 2
+        description: "Settle inter-tribal conflicts"
+        effects:
+          tribal_harmony: +2
+          wisdom: +1
+
+      scout_territory:
+        cost: 2
+        description: "Gather intelligence on surrounding areas"
+        effects:
+          strategic_info: +2
+          perception: +1
+
+  # Gad - Warriors
+  gad:
+    unique_actions:
+      train_warriors:
+        cost: 2
+        description: "Train tribal fighters"
+        effects:
+          combat_readiness: +3
+          tribal_strength: +2
+
+      fortify_camp:
+        cost: 2
+        description: "Strengthen tribal defenses"
+        effects:
+          defense: +2
+          security: +1
+
+  # Asher - Prosperous
+  asher:
+    unique_actions:
+      prepare_delicacies:
+        cost: 2
+        description: "Create special foods for festivals"
+        effects:
+          tribal_morale: +2
+          resources: +2
+
+      craft_goods:
+        cost: 2
+        description: "Create valuable trade items"
+        effects:
+          wealth: +3
+          crafting_skill: +1
+
+  # Common Actions (Available to All Tribes)
+  common_actions:
+    gather_manna:
+      cost: 1
+      daily_limit: true
+      effects:
+        food_supply: +2
+
+    water_search:
+      cost: 2
+      effects:
+        water_supply: +2
+
+    camp_maintenance:
+      cost: 1
+      effects:
+        camp_condition: +1
+
+    tribal_council:
+      cost: 2
+      effects:
+        tribal_unity: +1
+
+    prayer:
+      cost: 1
+      effects:
+        piety: +1
+
+  # Action Combinations
+  action_synergies:
+    religious_focus:
+      actions: ["prayer", "tabernacle_service"]
+      bonus_effect: "piety_boost"
+
+    military_preparation:
+      actions: ["train_warriors", "fortify_camp"]
+      bonus_effect: "defense_boost"
+
+    resource_gathering:
+      actions: ["gather_manna", "water_search"]
+      bonus_effect: "efficiency_boost"
+
+  # Monthly Special Actions
+  monthly_specials:
+    new_moon:
+      available_actions: ["special_prayer", "tribal_gathering"]
+      bonus_effects: true
+
+    festivals:
+      passover:
+        month: 1
+        required_actions: ["prepare_sacrifice", "teach_history"]
+
+      tabernacles:
+        month: 7
+        required_actions: ["build_booths", "harvest_celebration"]

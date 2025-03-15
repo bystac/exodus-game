@@ -1,0 +1,318 @@
+character_creation:
+  # Configuration
+  questions_per_game: 5
+  min_tribal_questions: 1  # Ensure at least one tribal-related question
+  min_background_questions: 1  # Ensure at least one background question
+
+  # Question Pool
+  questions:
+    # Tribal Identity Questions
+    tribal_heritage:
+      id: "q_tribal"
+      text: "My parents always told me stories about how they were..."
+      choices:
+        levi_heritage:
+          text: "...chosen by the Lord to serve in the holy temple, tending to the sacred flame and upholding the laws."
+          effects:
+            tribe: "levi"
+            piety: +3
+            wisdom: +2
+            starting_trait: "priestly_heritage"
+
+        judah_heritage:
+          text: "...warriors of Judah, leading our people with courage and strength through the darkest days of bondage."
+          effects:
+            tribe: "judah"
+            strength: +2
+            leadership: +3
+            starting_trait: "born_leader"
+
+        benjamin_heritage:
+          text: "...part of Benjamin's line, known for their skill with the bow and their swift feet in battle."
+          effects:
+            tribe: "benjamin"
+            dexterity: +3
+            combat: +2
+            starting_trait: "swift_warrior"
+
+    tribal_role:
+      id: "q_role"
+      text: "In our tribe, my family was known for..."
+      choices:
+        spiritual_leaders:
+          text: "...their deep understanding of the Torah and teaching it to others."
+          effects:
+            wisdom: +3
+            teaching: +2
+            starting_trait: "torah_scholar"
+
+        tribal_guards:
+          text: "...protecting our people as tribal guards, standing watch through the darkest nights."
+          effects:
+            strength: +2
+            vigilance: +3
+            starting_trait: "guardian"
+
+        healers:
+          text: "...their knowledge of healing herbs and caring for the sick."
+          effects:
+            intelligence: +2
+            healing: +3
+            starting_trait: "healer"
+
+    # Family Background Questions
+    family_position:
+      id: "q_family"
+      text: "Among my siblings, I was..."
+      choices:
+        eldest:
+          text: "...the firstborn, carrying the weight of responsibility from an early age."
+          effects:
+            leadership: +2
+            wisdom: +2
+            starting_trait: "responsible"
+
+        middle:
+          text: "...in the middle, learning to negotiate and keep peace between my siblings."
+          effects:
+            diplomacy: +3
+            empathy: +2
+            starting_trait: "peacemaker"
+
+        youngest:
+          text: "...the youngest, protected and taught by my older siblings."
+          effects:
+            learning: +3
+            adaptability: +2
+            starting_trait: "quick_learner"
+
+    childhood_experience:
+      id: "q_childhood"
+      text: "As a child, I spent most of my time..."
+      choices:
+        studying:
+          text: "...studying the sacred texts with the elders, absorbing their wisdom."
+          effects:
+            wisdom: +3
+            piety: +2
+            starting_trait: "studious"
+
+        training:
+          text: "...training with weapons and learning the art of war."
+          effects:
+            combat: +3
+            strength: +2
+            starting_trait: "warrior"
+
+        trading:
+          text: "...helping in the marketplace, learning the ways of trade."
+          effects:
+            commerce: +3
+            charisma: +2
+            starting_trait: "merchant"
+
+    # Personal History Questions
+    egypt_memory:
+      id: "q_egypt"
+      text: "My strongest memory of Egypt is..."
+      choices:
+        resistance:
+          text: "...secretly helping our people escape the taskmasters' cruelty."
+          effects:
+            courage: +3
+            stealth: +2
+            starting_trait: "rebellious"
+
+        survival:
+          text: "...finding creative ways to survive under Pharaoh's harsh decrees."
+          effects:
+            intelligence: +3
+            resourcefulness: +2
+            starting_trait: "survivor"
+
+        faith:
+          text: "...praying with my family, keeping our faith alive despite persecution."
+          effects:
+            piety: +3
+            resilience: +2
+            starting_trait: "faithful"
+
+    personal_loss:
+      id: "q_loss"
+      text: "Before leaving Egypt, I lost..."
+      choices:
+        family:
+          text: "...my parents to Pharaoh's cruelty, forcing me to care for my siblings."
+          effects:
+            responsibility: +3
+            determination: +2
+            starting_trait: "protective"
+
+        wealth:
+          text: "...all our family's possessions, teaching me that true wealth lies elsewhere."
+          effects:
+            wisdom: +2
+            detachment: +3
+            starting_trait: "ascetic"
+
+        friend:
+          text: "...my closest friend, who chose to stay in Egypt."
+          effects:
+            empathy: +3
+            loyalty: +2
+            starting_trait: "loyal"
+
+    # Skills and Talents
+    natural_talent:
+      id: "q_talent"
+      text: "From an early age, I showed a natural talent for..."
+      choices:
+        leadership:
+          text: "...leading others, naturally gaining their trust and respect."
+          effects:
+            leadership: +3
+            charisma: +2
+            starting_trait: "natural_leader"
+
+        crafting:
+          text: "...working with my hands, creating tools and items of beauty."
+          effects:
+            crafting: +3
+            dexterity: +2
+            starting_trait: "artisan"
+
+        healing:
+          text: "...understanding illnesses and finding ways to heal them."
+          effects:
+            healing: +3
+            wisdom: +2
+            starting_trait: "healer"
+
+    desert_skill:
+      id: "q_desert"
+      text: "In preparation for the journey, I learned..."
+      choices:
+        navigation:
+          text: "...to read the stars and find water in the desert."
+          effects:
+            survival: +3
+            intelligence: +2
+            starting_trait: "navigator"
+
+        combat:
+          text: "...to fight with sword and spear against desert raiders."
+          effects:
+            combat: +3
+            strength: +2
+            starting_trait: "desert_warrior"
+
+        gathering:
+          text: "...to find food and medicine in the harshest places."
+          effects:
+            survival: +3
+            wisdom: +2
+            starting_trait: "forager"
+
+    # Personality and Values
+    moral_choice:
+      id: "q_morality"
+      text: "When faced with injustice in Egypt, I..."
+      choices:
+        direct_action:
+          text: "...took direct action to help the oppressed, regardless of the risk."
+          effects:
+            courage: +3
+            justice: +2
+            starting_trait: "righteous"
+
+        subtle_resistance:
+          text: "...found subtle ways to undermine the oppressors."
+          effects:
+            cunning: +3
+            stealth: +2
+            starting_trait: "subversive"
+
+        spiritual_resistance:
+          text: "...turned to prayer and maintained faith in divine justice."
+          effects:
+            piety: +3
+            patience: +2
+            starting_trait: "faithful"
+
+    greatest_fear:
+      id: "q_fear"
+      text: "My greatest fear about the journey ahead is..."
+      choices:
+        faith_loss:
+          text: "...losing my faith in the face of hardship."
+          effects:
+            piety: +3
+            determination: +2
+            starting_trait: "god_seeker"
+
+        failure:
+          text: "...failing to protect those who depend on me."
+          effects:
+            responsibility: +3
+            courage: +2
+            starting_trait: "protective"
+
+        isolation:
+          text: "...being rejected by our community."
+          effects:
+            empathy: +3
+            community: +2
+            starting_trait: "communal"
+
+# Question Selection Rules
+selection_rules:
+  category_distribution:
+    tribal: 1
+    background: 1
+    skills: 1
+    personality: 1
+    history: 1
+
+  balance_requirements:
+    min_stat_questions: 2
+    min_trait_questions: 2
+    max_same_category: 2
+
+  tribal_compatibility:
+    levi:
+      preferred_questions: ["tribal_role", "childhood_experience"]
+      avoided_questions: ["desert_skill"]
+
+    judah:
+      preferred_questions: ["moral_choice", "natural_talent"]
+      avoided_questions: ["personal_loss"]
+
+  trait_limits:
+    max_positive_traits: 3
+    max_negative_traits: 1
+
+# Stat Calculation Rules
+stat_calculation:
+  base_stats:
+    strength: 5
+    dexterity: 5
+    intelligence: 5
+    wisdom: 5
+    charisma: 5
+    piety: 5
+
+  modifier_limits:
+    min_stat: 3
+    max_stat: 10
+    max_bonus: 5
+
+  trait_interactions:
+    complementary_traits:
+      - ["warrior", "protective"]
+      - ["faithful", "god_seeker"]
+      - ["healer", "empathic"]
+
+    conflicting_traits:
+      - ["warrior", "pacifist"]
+      - ["merchant", "ascetic"]
+      - ["subversive", "loyal"]

@@ -1,0 +1,70 @@
+mod_info:
+  id: "desert_chronicles"
+  name: "Desert Chronicles"
+  version: "1.0.0"
+  author: "Example Modder"
+  description: "Adds new desert-themed content and mechanics"
+  dependencies: ["core"]
+  load_order: 100
+
+# New trait definitions
+traits:
+  desert_born:
+    name: "Desert Born"
+    description: "Born and raised in the harsh desert"
+    effects:
+      heat_resistance: 3
+      water_consumption: -0.2
+    acquisition:
+      character_creation: true
+      requirements:
+        location: "desert_region"
+
+# New cutscene
+cutscenes:
+  sandstorm_event:
+    id: "year_2_sandstorm"
+    trigger:
+      type: "event"
+      event_id: "evt_sandstorm"
+    scenes:
+      - type: "background"
+        art: "art/backgrounds/sandstorm.png"
+        fade_in: 1.5
+      - type: "music"
+        track: "audio/music/storm.ogg"
+      - type: "verse"
+        text:
+          hebrew: "וְרוּחַ נָסַע מֵאֵת יְהוָה"
+          english: "And there went forth a wind from the LORD"
+        reference: "Numbers 11:31"
+      - type: "special_effect"
+        effect: "sandstorm_particles"
+        duration: 3.0
+
+# UI theme override
+ui_elements:
+  themes:
+    desert_storm:
+      primary_color: "#B8860B"
+      secondary_color: "#CD853F"
+      text_color: "#F5DEB3"
+      background_color: "#8B4513"
+
+# Custom dialog backgrounds
+dialog:
+  backgrounds:
+    desert_tent:
+      image: "ui/backgrounds/tent_interior.png"
+      ambient_sound: "audio/ambient/tent.ogg"
+    oasis:
+      image: "ui/backgrounds/oasis.png"
+      ambient_sound: "audio/ambient/water.ogg"
+
+# Localization additions
+localization:
+  english:
+    mod_desert_born: "Desert Born"
+    mod_desert_born_desc: "You were born under the scorching sun"
+    evt_sandstorm_title: "The Great Sandstorm"
+    evt_sandstorm_desc: "A mighty wind brings sand from the desert"

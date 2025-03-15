@@ -1,0 +1,350 @@
+traits:
+  # Core Personality Traits
+  faithful:
+    name: "Faithful"
+    description: "Strong belief in God and the mission"
+    effects:
+      piety_gain: 2
+      leadership: 1
+    conflicts_with: ["doubter"]
+    acquisition:
+      character_creation: true
+      events: ["evt_red_sea_crossing", "evt_golden_calf"]
+
+  doubter:
+    name: "Doubter"
+    description: "Questions divine intervention"
+    effects:
+      piety_gain: -1
+      intelligence: 1
+    conflicts_with: ["faithful"]
+    acquisition:
+      events: ["evt_golden_calf", "evt_spies_return"]
+
+  leader:
+    name: "Natural Leader"
+    description: "Born to lead others"
+    effects:
+      leadership: 2
+      charisma: 1
+    acquisition:
+      character_creation: true
+      events: ["evt_tribal_leadership"]
+
+  # Tribal Heritage Traits
+  priestly_heritage:
+    name: "Priestly Heritage"
+    description: "Born into a family of Levite priests"
+    effects:
+      piety_gain: 2
+      ritual_knowledge: 2
+      tabernacle_access: true
+    requirements:
+      tribe: "levi"
+    acquisition:
+      character_creation: true
+
+  born_leader:
+    name: "Born Leader"
+    description: "Natural leadership abilities from Judah's line"
+    effects:
+      leadership: 2
+      charisma: 1
+      tribal_influence: 2
+    requirements:
+      tribe: "judah"
+    acquisition:
+      character_creation: true
+
+  swift_warrior:
+    name: "Swift Warrior"
+    description: "Inherited the martial prowess of Benjamin"
+    effects:
+      combat: 2
+      speed: 2
+      archery: 2
+    requirements:
+      tribe: "benjamin"
+    acquisition:
+      character_creation: true
+
+  # Skill-Based Traits
+  craftsman:
+    name: "Craftsman"
+    description: "Skilled at creating items"
+    effects:
+      crafting_speed: 1.5
+      resource_efficiency: 1.2
+    acquisition:
+      character_creation: true
+      skill_development: "crafting_mastery"
+
+  healer:
+    name: "Healer"
+    description: "Gifted in medicine and healing"
+    effects:
+      healing_power: 2
+      medicine_efficiency: 1.5
+    acquisition:
+      character_creation: true
+      skill_development: "medicine_mastery"
+
+  artisan:
+    name: "Artisan"
+    description: "Skilled in crafting and creation"
+    effects:
+      crafting: 2
+      artistic_ability: 2
+      resource_efficiency: 1
+    acquisition:
+      character_creation: true
+      skill_development: "artisan_mastery"
+
+  navigator:
+    name: "Navigator"
+    description: "Skilled at finding paths and reading stars"
+    effects:
+      navigation: 2
+      survival: 2
+      pathfinding: 1
+    acquisition:
+      character_creation: true
+      skill_development: "navigation_mastery"
+
+  # Combat and Survival Traits
+  desert_warrior:
+    name: "Desert Warrior"
+    description: "Trained in desert combat"
+    effects:
+      combat: 2
+      heat_resistance: 2
+      desert_tactics: 1
+    acquisition:
+      character_creation: true
+      events: ["evt_amalek_battle"]
+
+  guardian:
+    name: "Guardian"
+    description: "Trained to protect the tribe"
+    effects:
+      combat: 2
+      vigilance: 2
+      tribal_defense: 1
+    acquisition:
+      character_creation: true
+      events: ["evt_camp_defense"]
+
+  survivor:
+    name: "Survivor"
+    description: "Experienced in overcoming hardship"
+    effects:
+      resilience: 2
+      resourcefulness: 2
+      survival_skills: 1
+    acquisition:
+      character_creation: true
+      events: ["evt_wilderness_trial"]
+
+  forager:
+    name: "Forager"
+    description: "Skilled at finding resources in harsh environments"
+    effects:
+      survival: 2
+      resource_gathering: 2
+      herb_knowledge: 1
+    acquisition:
+      character_creation: true
+      skill_development: "foraging_mastery"
+
+  # Religious and Spiritual Traits
+  torah_scholar:
+    name: "Torah Scholar"
+    description: "Deeply versed in religious teachings"
+    effects:
+      wisdom: 2
+      teaching: 2
+      piety_gain: 1
+    acquisition:
+      character_creation: true
+      skill_development: "torah_study"
+
+  god_seeker:
+    name: "God Seeker"
+    description: "Deeply committed to spiritual growth"
+    effects:
+      piety_gain: 2
+      prayer_effectiveness: 2
+      divine_insight: 1
+    acquisition:
+      character_creation: true
+      events: ["evt_divine_encounter"]
+
+  chosen:
+    name: "Chosen One"
+    description: "Marked by divine providence"
+    effects:
+      piety_gain: 3
+      all_stats: 1
+    rare: true
+    mutually_exclusive: true
+    acquisition:
+      events: ["evt_divine_selection"]
+
+  # Social and Leadership Traits
+  responsible:
+    name: "Responsible"
+    description: "Accustomed to carrying duties from an early age"
+    effects:
+      leadership: 1
+      reliability: 2
+      task_efficiency: 1
+    acquisition:
+      character_creation: true
+
+  peacemaker:
+    name: "Peacemaker"
+    description: "Skilled at resolving conflicts"
+    effects:
+      diplomacy: 2
+      empathy: 2
+      conflict_resolution: 1
+    acquisition:
+      character_creation: true
+      events: ["evt_tribal_dispute"]
+
+  communal:
+    name: "Communal"
+    description: "Strongly connected to community life"
+    effects:
+      social_bonds: 2
+      tribal_unity: 2
+      community_support: 1
+    acquisition:
+      character_creation: true
+
+  # Learning and Development Traits
+  quick_learner:
+    name: "Quick Learner"
+    description: "Absorbs new knowledge rapidly"
+    effects:
+      learning_speed: 1.5
+      adaptability: 2
+      skill_gain: 1
+    acquisition:
+      character_creation: true
+
+  studious:
+    name: "Studious"
+    description: "Dedicated to learning and understanding"
+    effects:
+      wisdom_gain: 1.5
+      memory: 2
+      research_speed: 1
+    acquisition:
+      character_creation: true
+
+  # Rebellious and Resistance Traits
+  rebellious:
+    name: "Rebellious"
+    description: "Resistant to unjust authority"
+    effects:
+      courage: 2
+      independence: 2
+      resistance_to_control: 1
+    acquisition:
+      character_creation: true
+      events: ["evt_rebellion"]
+
+  subversive:
+    name: "Subversive"
+    description: "Skilled at undermining oppressive systems"
+    effects:
+      cunning: 2
+      stealth: 2
+      resistance_tactics: 1
+    acquisition:
+      character_creation: true
+
+  righteous:
+    name: "Righteous"
+    description: "Strong sense of justice and morality"
+    effects:
+      piety: 2
+      justice: 2
+      moral_authority: 1
+    acquisition:
+      character_creation: true
+      events: ["evt_moral_choice"]
+
+  protective:
+    name: "Protective"
+    description: "Strong drive to defend others"
+    effects:
+      combat: 1
+      vigilance: 2
+      shield_others: 1
+    acquisition:
+      character_creation: true
+      events: ["evt_protect_weak"]
+
+# Trait System Rules
+trait_rules:
+  # Acquisition Rules
+  max_traits:
+    starting: 3
+    total: 10
+    negative: 2
+
+  # Category Limits
+  category_limits:
+    combat_traits: 3
+    spiritual_traits: 3
+    social_traits: 3
+    skill_traits: 4
+
+  # Trait Groups
+  exclusive_groups:
+    combat_traits: ["swift_warrior", "guardian", "desert_warrior"]
+    leadership_traits: ["born_leader", "responsible", "natural_leader"]
+    spiritual_traits: ["priestly_heritage", "torah_scholar", "god_seeker"]
+
+  # Synergy Bonuses
+  synergy_bonuses:
+    spiritual_focus:
+      traits: ["priestly_heritage", "torah_scholar", "god_seeker"]
+      bonus:
+        piety_gain: +1
+        wisdom: +1
+
+    warrior_path:
+      traits: ["swift_warrior", "guardian", "desert_warrior"]
+      bonus:
+        combat: +1
+        survival: +1
+
+    leadership_mastery:
+      traits: ["born_leader", "responsible", "natural_leader"]
+      bonus:
+        leadership: +1
+        charisma: +1
+
+  # Trait Development
+  trait_progression:
+    experience_required: 100
+    max_level: 3
+    level_bonuses:
+      1:
+        effect_multiplier: 1.0
+      2:
+        effect_multiplier: 1.5
+        new_ability: true
+      3:
+        effect_multiplier: 2.0
+        mastery_ability: true
+
+  # Conflict Resolution
+  trait_conflicts:
+    cannot_combine:
+      - ["faithful", "doubter"]
+      - ["rebellious", "communal"]
+      - ["subversive", "righteous"]

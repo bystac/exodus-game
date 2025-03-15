@@ -1,0 +1,203 @@
+camp_quests:
+  # Daily Resource Gathering Quests
+  manna_collection:
+    id: "quest_manna_daily"
+    title: "Daily Manna Collection"
+    type: "daily"
+    location: "manna_fields"
+    description: "Gather the daily portion of manna for your family and help others in need"
+    objectives:
+      - gather_manna:
+          amount: 3
+          time_window: "morning"
+      - help_elderly:
+          target_amount: 1
+          description: "Help an elderly person gather their portion"
+    rewards:
+      - resource: "manna"
+        amount: 4
+      - piety: 1
+      - reputation: 2
+    special_rules:
+      sabbath: "disabled"
+      sixth_day: "double_portions"
+
+  water_supply:
+    id: "quest_water_daily"
+    title: "Water Collection Duty"
+    type: "daily"
+    location: "water_source"
+    description: "Collect and distribute water to maintain the camp's supply"
+    objectives:
+      - collect_water:
+          amount: 5
+      - distribute_water:
+          households: 3
+    rewards:
+      - resource: "water"
+        amount: 2
+      - stamina_experience: 1
+      - community_reputation: 2
+
+  # Maintenance Quests
+  camp_maintenance:
+    id: "quest_maintenance"
+    title: "Camp Upkeep"
+    type: "repeatable"
+    location: "all_quarters"
+    description: "Help maintain the camp's facilities and living areas"
+    objectives:
+      - repair_tents:
+          amount: 2
+      - clean_area:
+          size: "medium"
+    rewards:
+      - crafting_experience: 2
+      - tribal_reputation: 3
+      - resources:
+          repair_materials: 1
+
+  # Religious Quests
+  tabernacle_service:
+    id: "quest_tabernacle"
+    title: "Tabernacle Duties"
+    type: "daily"
+    location: "tabernacle"
+    description: "Assist in maintaining the holy sanctuary"
+    requirements:
+      tribe: "levi"
+      min_piety: 20
+    objectives:
+      - clean_vessels:
+          amount: 3
+      - prepare_incense:
+          quality: "perfect"
+      - maintain_altar:
+          time: 1
+    rewards:
+      - piety: 5
+      - priestly_experience: 2
+      - special_blessing: true
+
+  # Combat and Security
+  perimeter_patrol:
+    id: "quest_patrol"
+    title: "Camp Security Patrol"
+    type: "repeatable"
+    location: "training_grounds"
+    description: "Help maintain camp security through regular patrols"
+    requirements:
+      min_strength: 5
+    objectives:
+      - patrol_circuit:
+          distance: "full_perimeter"
+      - check_posts:
+          amount: 4
+      - report_findings:
+          to: "security_chief"
+    rewards:
+      - combat_experience: 3
+      - tribal_reputation: 2
+      - resources:
+          patrol_rations: 1
+
+  # Tribal-Specific Quests
+  tribal_missions:
+    judah_leadership:
+      id: "quest_judah_lead"
+      title: "Leadership Training"
+      type: "tribal"
+      location: "eastern_quarter"
+      requirements:
+        tribe: "judah"
+      objectives:
+        - lead_training:
+            sessions: 2
+        - resolve_disputes:
+            amount: 1
+      rewards:
+        - leadership_experience: 3
+        - tribal_influence: 2
+
+    levi_teaching:
+      id: "quest_levi_teach"
+      title: "Torah Education"
+      type: "tribal"
+      location: "tabernacle"
+      requirements:
+        tribe: "levi"
+      objectives:
+        - teach_laws:
+            students: 5
+        - answer_questions:
+            amount: 10
+      rewards:
+        - wisdom: 2
+        - teaching_experience: 3
+        - piety: 2
+
+  # Special Event Quests
+  festival_preparation:
+    id: "quest_festival"
+    title: "Festival Preparations"
+    type: "event"
+    location: "marketplace"
+    description: "Help prepare the camp for upcoming religious festivals"
+    availability:
+      festival_days: true
+    objectives:
+      - setup_areas:
+          amount: 3
+      - prepare_decorations:
+          sets: 2
+      - coordinate_tribes:
+          amount: 4
+    rewards:
+      - event_tokens: 5
+      - community_reputation: 5
+      - piety: 3
+
+  snake_threat:
+    id: "quest_snakes"
+    title: "Snake Infestation"
+    type: "emergency"
+    location: "all_quarters"
+    description: "Help protect the camp from dangerous snakes"
+    trigger_conditions:
+      snake_event: true
+    objectives:
+      - clear_areas:
+          zones: 3
+      - protect_children:
+          groups: 2
+      - treat_bites:
+          if_healer: true
+    rewards:
+      - combat_experience: 4
+      - healing_experience: 3
+      - tribal_reputation: 5
+
+# Quest Rules
+quest_rules:
+  daily_reset:
+    time: "sunrise"
+    max_daily_quests: 5
+
+  repeatable_cooldown:
+    standard: 4  # hours
+    emergency: 1  # hour
+
+  reward_scaling:
+    base_multiplier: 1.0
+    difficulty_bonus: 0.2
+    reputation_influence: 0.1
+
+  special_conditions:
+    sabbath:
+      restricted_quests: ["manna_collection", "craft_items"]
+      bonus_quests: ["prayer", "study_torah"]
+
+    festivals:
+      all_quests:
+        reward_multiplier: 1.5
+        special_rewards: true

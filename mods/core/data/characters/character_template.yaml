@@ -1,0 +1,50 @@
+character_template:
+  base_stats:
+    piety: 10
+    health: 100
+    strength: 5
+    dexterity: 5
+    intelligence: 5
+    luck: 5
+
+  starting_inventory:
+    manna: 3
+    water: 2
+
+  stat_points_available: 10
+
+  stat_limits:
+    min_per_stat: 1
+    max_per_stat: 10
+
+  trait_selection:
+    starting_traits_count: 2
+    max_negative_traits: 1
+
+  age_range:
+    min: 15
+    max: 20
+
+  background_options:
+    - tribe_member:
+        name: "Tribe Member"
+        description: "Born into one of the twelve tribes"
+        starting_bonus:
+          piety: 1
+          tribal_reputation: 10
+
+    - egyptian_convert:
+        name: "Egyptian Convert"
+        description: "An Egyptian who chose to join the exodus"
+        starting_bonus:
+          intelligence: 2
+          crafting_skill: 1
+        starting_penalty:
+          tribal_reputation: -5
+
+    - mixed_heritage:
+        name: "Mixed Heritage"
+        description: "Born to parents from different backgrounds"
+        starting_bonus:
+          diplomacy: 2
+          luck: 1

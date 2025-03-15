@@ -1,0 +1,187 @@
+camp_locations:
+  # Central Area
+  tabernacle:
+    id: "loc_tabernacle"
+    name: "The Tabernacle"
+    description: "The holy sanctuary at the center of the camp, where God's presence dwells"
+    available_actions:
+      - "prayer"
+      - "sacrifice_offering"
+      - "tabernacle_service"
+    quest_givers:
+      - "aaron"  # High Priest
+      - "levite_priests"
+    daily_quests:
+      - "maintain_tabernacle"
+      - "prepare_sacrifices"
+      - "clean_sacred_vessels"
+    requirements:
+      piety_min: 20
+      if_tribe: "levi"
+        special_access: true
+
+  # Tribal Quarters (Four Directions)
+  eastern_quarter:
+    id: "loc_eastern_camp"
+    name: "Eastern Camp"
+    description: "Home to the tribes of Judah, Issachar, and Zebulun"
+    tribes: ["judah", "issachar", "zebulun"]
+    available_actions:
+      - "tribal_council"
+      - "trade"
+      - "craft"
+    quest_givers:
+      - "tribal_elders"
+      - "merchants"
+    daily_quests:
+      - "gather_manna"
+      - "water_collection"
+      - "camp_maintenance"
+
+  southern_quarter:
+    id: "loc_southern_camp"
+    name: "Southern Camp"
+    description: "Home to the tribes of Reuben, Simeon, and Gad"
+    tribes: ["reuben", "simeon", "gad"]
+    available_actions:
+      - "tribal_council"
+      - "military_training"
+      - "craft"
+    quest_givers:
+      - "tribal_warriors"
+      - "craftsmen"
+    daily_quests:
+      - "patrol_perimeter"
+      - "weapon_maintenance"
+      - "gather_resources"
+
+  western_quarter:
+    id: "loc_western_camp"
+    name: "Western Camp"
+    description: "Home to the tribes of Ephraim, Manasseh, and Benjamin"
+    tribes: ["ephraim", "manasseh", "benjamin"]
+    available_actions:
+      - "tribal_council"
+      - "trade"
+      - "scout"
+    quest_givers:
+      - "tribal_scouts"
+      - "traders"
+    daily_quests:
+      - "explore_surroundings"
+      - "trade_resources"
+      - "gather_intelligence"
+
+  northern_quarter:
+    id: "loc_northern_camp"
+    name: "Northern Camp"
+    description: "Home to the tribes of Dan, Asher, and Naphtali"
+    tribes: ["dan", "asher", "naphtali"]
+    available_actions:
+      - "tribal_council"
+      - "craft"
+      - "trade"
+    quest_givers:
+      - "tribal_judges"
+      - "artisans"
+    daily_quests:
+      - "resolve_disputes"
+      - "craft_supplies"
+      - "organize_storage"
+
+  # Common Areas
+  manna_fields:
+    id: "loc_manna_fields"
+    name: "Manna Fields"
+    description: "The surrounding areas where manna appears each morning"
+    available_actions:
+      - "gather_manna"
+      - "teach_gathering"
+    quest_givers:
+      - "gathering_coordinators"
+    daily_quests:
+      - "collect_daily_portion"
+      - "help_elderly_gather"
+      - "clean_gathering_area"
+    special_rules:
+      sabbath_gathering: false
+      double_portion_day: 6
+
+  water_source:
+    id: "loc_water_source"
+    name: "Water Source"
+    description: "The community well or water collection point"
+    available_actions:
+      - "collect_water"
+      - "maintain_source"
+    quest_givers:
+      - "water_managers"
+    daily_quests:
+      - "water_distribution"
+      - "clean_water_source"
+      - "repair_water_containers"
+
+  marketplace:
+    id: "loc_marketplace"
+    name: "Camp Marketplace"
+    description: "Central area for trading and community gatherings"
+    available_actions:
+      - "trade"
+      - "craft"
+      - "socialize"
+    quest_givers:
+      - "merchants"
+      - "craftsmen"
+    daily_quests:
+      - "trade_resources"
+      - "craft_items"
+      - "organize_market"
+
+  training_grounds:
+    id: "loc_training_grounds"
+    name: "Training Grounds"
+    description: "Area for military training and physical exercises"
+    available_actions:
+      - "military_training"
+      - "exercise"
+      - "teach_combat"
+    quest_givers:
+      - "military_trainers"
+      - "tribal_warriors"
+    daily_quests:
+      - "basic_training"
+      - "weapon_practice"
+      - "patrol_training"
+
+# Location Rules
+location_rules:
+  access_restrictions:
+    tabernacle_inner:
+      allowed_tribes: ["levi"]
+      exceptions:
+        high_piety: true
+        special_events: true
+
+  time_restrictions:
+    marketplace:
+      active_hours: [6, 18]  # 6 AM to 6 PM
+    training_grounds:
+      active_hours: [5, 17]  # 5 AM to 5 PM
+
+  sabbath_rules:
+    restricted_locations:
+      - "marketplace"
+      - "training_grounds"
+    modified_locations:
+      - "tabernacle":
+          increased_activity: true
+      - "tribal_quarters":
+          rest_focus: true
+
+  special_events:
+    new_moon:
+      special_locations: ["tabernacle", "marketplace"]
+    festivals:
+      all_locations:
+        modified_activities: true
+        increased_rewards: true

@@ -1,0 +1,348 @@
+tribes:
+  # Reuben - The Firstborn
+  reuben:
+    id: "tribe_reuben"
+    name: "Tribe of Reuben"
+    description: "Firstborn tribe, known for strength but unstable leadership"
+    inherited_traits:
+      primary:
+        - name: "Firstborn's Pride"
+          effects:
+            leadership: 2
+            charisma: 1
+          chance: 0.8
+      secondary:
+        - name: "Unstable as Water"
+          effects:
+            decision_making: -1
+            impulsiveness: 2
+          chance: 0.4
+    starting_stats:
+      strength: +2
+      leadership: +1
+      wisdom: -1
+    tribal_skills:
+      - "cattle_herding"
+      - "wilderness_survival"
+
+  # Simeon - The Scattered
+  simeon:
+    id: "tribe_simeon"
+    name: "Tribe of Simeon"
+    description: "Scattered among Israel, known for their zeal"
+    inherited_traits:
+      primary:
+        - name: "Zealous Spirit"
+          effects:
+            combat_skill: 2
+            piety: 1
+          chance: 0.7
+      secondary:
+        - name: "Scattered Heritage"
+          effects:
+            adaptability: 2
+            tribal_unity: -1
+          chance: 0.5
+    starting_stats:
+      combat: +2
+      adaptability: +2
+      tribal_influence: -1
+    tribal_skills:
+      - "urban_survival"
+      - "diplomacy"
+
+  # Levi - The Priests
+  levi:
+    id: "tribe_levi"
+    name: "Tribe of Levi"
+    description: "The priestly tribe, servants of the Tabernacle"
+    inherited_traits:
+      primary:
+        - name: "Priestly Heritage"
+          effects:
+            piety: 3
+            wisdom: 2
+          chance: 0.9
+      secondary:
+        - name: "Sacred Knowledge"
+          effects:
+            teaching: 2
+            leadership: 1
+          chance: 0.6
+    starting_stats:
+      piety: +3
+      wisdom: +2
+      strength: -1
+    tribal_skills:
+      - "ritual_knowledge"
+      - "teaching"
+      - "sacred_music"
+    special_access:
+      - "tabernacle_service"
+      - "priestly_duties"
+
+  # Judah - The Royal Tribe
+  judah:
+    id: "tribe_judah"
+    name: "Tribe of Judah"
+    description: "The royal tribe, blessed with leadership"
+    inherited_traits:
+      primary:
+        - name: "Royal Blood"
+          effects:
+            leadership: 3
+            charisma: 2
+          chance: 0.8
+      secondary:
+        - name: "Lion's Courage"
+          effects:
+            combat_skill: 2
+            bravery: 2
+          chance: 0.6
+    starting_stats:
+      leadership: +3
+      charisma: +2
+      combat: +1
+    tribal_skills:
+      - "leadership"
+      - "warfare"
+      - "administration"
+
+  # Dan - The Judges
+  dan:
+    id: "tribe_dan"
+    name: "Tribe of Dan"
+    description: "Known for judgment and cunning"
+    inherited_traits:
+      primary:
+        - name: "Judge's Wisdom"
+          effects:
+            wisdom: 2
+            perception: 2
+          chance: 0.7
+      secondary:
+        - name: "Serpent's Cunning"
+          effects:
+            strategy: 2
+            stealth: 1
+          chance: 0.5
+    starting_stats:
+      wisdom: +2
+      perception: +2
+      stealth: +1
+    tribal_skills:
+      - "judgment"
+      - "strategy"
+      - "scouting"
+
+  # Naphtali - The Swift
+  naphtali:
+    id: "tribe_naphtali"
+    name: "Tribe of Naphtali"
+    description: "Swift as a deer, known for speed and eloquence"
+    inherited_traits:
+      primary:
+        - name: "Swift Runner"
+          effects:
+            speed: 3
+            agility: 2
+          chance: 0.8
+      secondary:
+        - name: "Beautiful Words"
+          effects:
+            diplomacy: 2
+            charisma: 1
+          chance: 0.5
+    starting_stats:
+      speed: +3
+      agility: +2
+      diplomacy: +1
+    tribal_skills:
+      - "messenger"
+      - "hunting"
+      - "poetry"
+
+  # Gad - The Warriors
+  gad:
+    id: "tribe_gad"
+    name: "Tribe of Gad"
+    description: "Fierce warriors, defenders of Israel"
+    inherited_traits:
+      primary:
+        - name: "Warrior Spirit"
+          effects:
+            combat_skill: 3
+            bravery: 2
+          chance: 0.8
+      secondary:
+        - name: "Defender's Instinct"
+          effects:
+            tactics: 2
+            leadership: 1
+          chance: 0.6
+    starting_stats:
+      combat: +3
+      strength: +2
+      tactics: +1
+    tribal_skills:
+      - "warfare"
+      - "defense"
+      - "weapon_crafting"
+
+  # Asher - The Prosperous
+  asher:
+    id: "tribe_asher"
+    name: "Tribe of Asher"
+    description: "Blessed with abundance and craftsmanship"
+    inherited_traits:
+      primary:
+        - name: "Royal Delicacies"
+          effects:
+            crafting: 3
+            trading: 2
+          chance: 0.7
+      secondary:
+        - name: "Prosperity's Blessing"
+          effects:
+            resource_gathering: 2
+            diplomacy: 1
+          chance: 0.6
+    starting_stats:
+      crafting: +3
+      trading: +2
+      diplomacy: +1
+    tribal_skills:
+      - "food_preparation"
+      - "trading"
+      - "agriculture"
+
+  # Issachar - The Scholars
+  issachar:
+    id: "tribe_issachar"
+    name: "Tribe of Issachar"
+    description: "Understanding of the times, wise counselors"
+    inherited_traits:
+      primary:
+        - name: "Time's Understanding"
+          effects:
+            wisdom: 3
+            knowledge: 2
+          chance: 0.8
+      secondary:
+        - name: "Scholar's Mind"
+          effects:
+            teaching: 2
+            perception: 1
+          chance: 0.6
+    starting_stats:
+      wisdom: +3
+      knowledge: +2
+      teaching: +1
+    tribal_skills:
+      - "astronomy"
+      - "calendar_keeping"
+      - "counseling"
+
+  # Zebulun - The Merchants
+  zebulun:
+    id: "tribe_zebulun"
+    name: "Tribe of Zebulun"
+    description: "Seafarers and traders"
+    inherited_traits:
+      primary:
+        - name: "Merchant's Eye"
+          effects:
+            trading: 3
+            navigation: 2
+          chance: 0.7
+      secondary:
+        - name: "Seafarer's Spirit"
+          effects:
+            adaptability: 2
+            resource_management: 1
+          chance: 0.6
+    starting_stats:
+      trading: +3
+      navigation: +2
+      diplomacy: +1
+    tribal_skills:
+      - "navigation"
+      - "trading"
+      - "shipbuilding"
+
+  # Joseph (Ephraim) - The Blessed
+  ephraim:
+    id: "tribe_ephraim"
+    name: "Tribe of Ephraim"
+    description: "Blessed with fruitfulness and leadership"
+    inherited_traits:
+      primary:
+        - name: "Joseph's Blessing"
+          effects:
+            leadership: 2
+            wisdom: 2
+          chance: 0.8
+      secondary:
+        - name: "Fruitful Branch"
+          effects:
+            prosperity: 2
+            charisma: 1
+          chance: 0.7
+    starting_stats:
+      leadership: +2
+      wisdom: +2
+      prosperity: +2
+    tribal_skills:
+      - "administration"
+      - "agriculture"
+      - "leadership"
+
+  # Joseph (Manasseh) - The Numerous
+  manasseh:
+    id: "tribe_manasseh"
+    name: "Tribe of Manasseh"
+    description: "Numerous and powerful, split across Jordan"
+    inherited_traits:
+      primary:
+        - name: "Firstborn's Strength"
+          effects:
+            strength: 2
+            endurance: 2
+          chance: 0.7
+      secondary:
+        - name: "Adaptable Spirit"
+          effects:
+            adaptability: 2
+            survival: 1
+          chance: 0.6
+    starting_stats:
+      strength: +2
+      endurance: +2
+      adaptability: +2
+    tribal_skills:
+      - "frontier_survival"
+      - "cattle_raising"
+      - "warfare"
+
+tribal_rules:
+  inheritance:
+    trait_chance_modifiers:
+      pure_lineage: 1.2
+      mixed_heritage: 0.8
+
+  skill_learning:
+    tribal_skill_bonus: 1.5
+    outside_skill_penalty: 0.8
+
+  special_conditions:
+    levi_restriction:
+      cannot_inherit_land: true
+      special_duties: ["tabernacle_service", "teaching_law"]
+
+    judah_bonus:
+      leadership_roles: true
+      royal_authority: 1.5
+
+    joseph_blessing:
+      applies_to: ["ephraim", "manasseh"]
+      prosperity_bonus: 1.3

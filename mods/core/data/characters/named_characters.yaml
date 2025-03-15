@@ -1,0 +1,214 @@
+characters:
+  # Leaders and Prophets
+  moses:
+    id: "char_moses"
+    name: "Moses"
+    title: "Leader of the Israelites"
+    role: ["Prophet", "Leader", "Lawgiver"]
+    relationship_modifiers:
+      piety_bonus: 2
+      leadership_bonus: 2
+    special_interactions:
+      - "receive_blessing"
+      - "seek_counsel"
+      - "join_prayer"
+    dialog_traits:
+      - humble
+      - faithful
+      - wise
+    appears_in_events:
+      - "evt_red_sea_crossing"
+      - "evt_marah_waters"
+      - "evt_golden_calf"
+    playable: false  # Premium character for future DLC
+
+  aaron:
+    id: "char_aaron"
+    name: "Aaron"
+    title: "High Priest"
+    role: ["High Priest", "Moses' Brother"]
+    relationship_modifiers:
+      piety_bonus: 1
+      priestly_favor: 2
+    special_interactions:
+      - "priestly_blessing"
+      - "tabernacle_service"
+      - "sacrifice_offering"
+    dialog_traits:
+      - diplomatic
+      - compromising
+      - religious
+    appears_in_events:
+      - "evt_golden_calf"
+      - "evt_korah_rebellion"
+    weakness_events:
+      - "evt_golden_calf"  # Shows his moment of weakness
+
+  miriam:
+    id: "char_miriam"
+    name: "Miriam"
+    title: "Prophetess"
+    role: ["Prophetess", "Moses' Sister"]
+    relationship_modifiers:
+      wisdom_bonus: 1
+      leadership_women: 2
+    special_interactions:
+      - "join_celebration"
+      - "seek_wisdom"
+      - "learn_song"
+    dialog_traits:
+      - musical
+      - bold
+      - prophetic
+    appears_in_events:
+      - "evt_red_sea_crossing"  # Leading women in song
+    special_events:
+      - "evt_miriam_leprosy"  # Her punishment for speaking against Moses
+
+  joshua:
+    id: "char_joshua"
+    name: "Joshua"
+    title: "Military Leader"
+    role: ["Spy", "Military Leader", "Moses' Successor"]
+    relationship_modifiers:
+      combat_bonus: 2
+      leadership_bonus: 1
+    special_interactions:
+      - "military_training"
+      - "battle_strategy"
+      - "faithful_counsel"
+    dialog_traits:
+      - brave
+      - faithful
+      - strategic
+    appears_in_events:
+      - "evt_amalek_battle"
+      - "evt_spies_return"
+
+  caleb:
+    id: "char_caleb"
+    name: "Caleb"
+    title: "Leader of Judah"
+    role: ["Faithful Spy", "Tribal Leader"]
+    relationship_modifiers:
+      courage_bonus: 2
+      tribal_reputation: 1
+    special_interactions:
+      - "seek_encouragement"
+      - "tribal_counsel"
+    dialog_traits:
+      - courageous
+      - faithful
+      - determined
+    appears_in_events:
+      - "evt_spies_return"
+
+  # Antagonists
+  korah:
+    id: "char_korah"
+    name: "Korah"
+    title: "Levite Rebel"
+    role: ["Rebel Leader", "Levite"]
+    relationship_modifiers:
+      rebellion_influence: 2
+      tribal_tension: 1
+    special_interactions:
+      - "debate_authority"
+      - "join_rebellion"
+      - "resist_rebellion"
+    dialog_traits:
+      - ambitious
+      - charismatic
+      - rebellious
+    appears_in_events:
+      - "evt_korah_rebellion"
+    antagonist: true
+
+  dathan_abiram:
+    id: "char_dathan_abiram"
+    name: "Dathan and Abiram"
+    title: "Rebellion Supporters"
+    role: ["Rebels"]
+    relationship_modifiers:
+      rebellion_influence: 1
+      community_tension: 1
+    special_interactions:
+      - "hear_complaints"
+      - "challenge_leadership"
+    dialog_traits:
+      - bitter
+      - nostalgic
+      - rebellious
+    appears_in_events:
+      - "evt_korah_rebellion"
+    antagonist: true
+
+  balaam:
+    id: "char_balaam"
+    name: "Balaam"
+    title: "Pagan Prophet"
+    role: ["Foreign Prophet"]
+    relationship_modifiers:
+      mystical_influence: 2
+      foreign_relations: 1
+    special_interactions:
+      - "seek_prophecy"
+      - "discuss_visions"
+    dialog_traits:
+      - conflicted
+      - prophetic
+      - greedy
+    appears_in_events:
+      - "evt_balaam_blessing"
+    antagonist: true
+
+  balak:
+    id: "char_balak"
+    name: "Balak"
+    title: "King of Moab"
+    role: ["Foreign King", "Enemy"]
+    relationship_modifiers:
+      foreign_tension: 2
+      conflict_chance: 1
+    special_interactions:
+      - "diplomatic_exchange"
+      - "avoid_conflict"
+    dialog_traits:
+      - fearful
+      - hostile
+      - proud
+    appears_in_events:
+      - "evt_balaam_blessing"
+    antagonist: true
+
+# Character Interaction Rules
+interaction_rules:
+  relationship_levels:
+    - name: "Hostile"
+      range: [-100, -50]
+      available_interactions: ["basic_dialog"]
+    - name: "Wary"
+      range: [-49, 0]
+      available_interactions: ["basic_dialog", "simple_request"]
+    - name: "Neutral"
+      range: [1, 49]
+      available_interactions: ["basic_dialog", "simple_request", "seek_advice"]
+    - name: "Friendly"
+      range: [50, 79]
+      available_interactions: ["all_basic", "special_request", "personal_advice"]
+    - name: "Trusted"
+      range: [80, 100]
+      available_interactions: ["all"]
+
+  trait_influences:
+    faithful:
+      positive_chars: ["moses", "aaron", "joshua", "caleb"]
+      negative_chars: ["korah", "balaam"]
+
+    doubter:
+      positive_chars: ["korah", "dathan_abiram"]
+      negative_chars: ["moses", "joshua", "caleb"]
+
+    levite:
+      positive_chars: ["aaron", "moses"]
+      special_interactions: ["tabernacle_service", "priestly_training"]

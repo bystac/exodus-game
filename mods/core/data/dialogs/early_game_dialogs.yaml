@@ -1,0 +1,143 @@
+dialogs:
+  # Red Sea Crossing Event Dialogs
+  moses_at_sea:
+    id: "dialog_red_sea"
+    character: "moses"
+    event: "evt_red_sea_crossing"
+    conversations:
+      initial_panic:
+        prompt: "The Egyptian army approaches from behind, the sea blocks our path..."
+        responses:
+          - text: "Do not be afraid. Stand firm and you will see the deliverance the LORD will bring today."
+            effects:
+              - type: "boost_morale"
+                amount: 3
+              - type: "add_piety"
+                amount: 2
+
+        player_options:
+          - text: "But how can we escape?"
+            response: "Watch and see the power of the LORD!"
+            effects:
+              - type: "add_trait"
+                trait: "faithful"
+                chance: 0.3
+
+          - text: "We should have stayed in Egypt!"
+            response: "The Egyptians you see today you will never see again."
+            effects:
+              - type: "add_trait"
+                trait: "doubter"
+                chance: 0.4
+
+  # Manna Discovery Dialogs
+  aaron_manna_teaching:
+    id: "dialog_manna_discovery"
+    character: "aaron"
+    event: "evt_manna_discovery"
+    conversations:
+      explain_manna:
+        prompt: "What is this strange substance covering the ground?"
+        responses:
+          - text: "This is the bread the LORD has given you to eat."
+            leads_to: "manna_rules"
+
+      manna_rules:
+        options:
+          - text: "How should we gather it?"
+            response: "Gather only what you need for today. Trust in God's daily provision."
+            effects:
+              - type: "learn_skill"
+                skill: "manna_gathering"
+                amount: 1
+
+          - text: "Can we store extra for tomorrow?"
+            response: "No, it will spoil. Only on the sixth day gather double portion."
+            effects:
+              - type: "add_knowledge"
+                knowledge: "manna_preservation"
+
+  # Miriam's Celebration Dialog
+  miriam_celebration:
+    id: "dialog_victory_song"
+    character: "miriam"
+    event: "evt_red_sea_crossing"
+    conversations:
+      join_celebration:
+        prompt: "Miriam leads the women in song and dance..."
+        responses:
+          - text: "Sing to the LORD, for He is highly exalted! The horse and rider He has hurled into the sea!"
+            leads_to: "celebration_options"
+
+        player_options:
+          - text: "Join the celebration and singing"
+            effects:
+              - type: "add_trait"
+                trait: "musical"
+                chance: 0.2
+              - type: "add_relationship"
+                character: "miriam"
+                amount: 10
+
+          - text: "Watch respectfully from a distance"
+            effects:
+              - type: "add_piety"
+                amount: 1
+
+  # Early Joshua Military Training
+  joshua_training:
+    id: "dialog_amalek_prep"
+    character: "joshua"
+    event: "evt_amalek_battle"
+    conversations:
+      battle_preparation:
+        prompt: "The Amalekites approach. We must prepare for battle."
+        responses:
+          - text: "We need every capable person. Are you ready to defend our people?"
+            leads_to: "battle_options"
+
+        battle_options:
+          - text: "I will fight alongside you"
+            requirements:
+              min_strength: 6
+            effects:
+              - type: "add_skill"
+                skill: "combat"
+                amount: 2
+              - type: "add_relationship"
+                character: "joshua"
+                amount: 15
+
+          - text: "I will help support Moses on the hill"
+            effects:
+              - type: "add_piety"
+                amount: 3
+              - type: "add_relationship"
+                character: "moses"
+                amount: 10
+
+dialog_rules:
+  relationship_impact:
+    positive_choice:
+      min_gain: 5
+      max_gain: 15
+    negative_choice:
+      min_loss: -10
+      max_loss: -20
+
+  trait_acquisition:
+    chance_multiplier: 1.5
+    when:
+      - "first_interaction"
+      - "major_event"
+      - "character_affinity_high"
+
+  special_conditions:
+    faithful_bonus:
+      applies_to: ["moses", "aaron", "joshua"]
+      bonus: 5
+
+    levite_bonus:
+      applies_to: ["aaron"]
+      bonus: 10
+      unlocks: ["priestly_training"]

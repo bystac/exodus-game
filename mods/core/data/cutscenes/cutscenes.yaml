@@ -1,0 +1,79 @@
+cutscenes:
+  # Year 1 - Exodus Begins
+  exodus_begins:
+    id: "year_1_exodus"
+    trigger:
+      type: "year_start"
+      year: 1
+    scenes:
+      - type: "background"
+        art: "art/backgrounds/desert_night.png"
+        fade_in: 2.0
+      - type: "music"
+        track: "audio/music/exodus_theme.ogg"
+        fade_in: 3.0
+      - type: "verse"
+        text:
+          hebrew: "וַיְהִי בְּשַׁלַּח פַּרְעֹה אֶת-הָעָם"
+          english: "When Pharaoh let the people go"
+        reference: "Exodus 13:17"
+        display_time: 5.0
+      - type: "art"
+        image: "art/scenes/people_leaving.png"
+        position: "center"
+        fade_in: 2.0
+      - type: "dialog"
+        character: "moses"
+        text:
+          hebrew: "בני ישראל, הגיע זמן חרותנו"
+          english: "Children of Israel, the time of our freedom has come"
+        duration: 4.0
+
+  # Red Sea Crossing
+  red_sea_crossing:
+    id: "year_1_sea_crossing"
+    trigger:
+      type: "event"
+      event_id: "evt_red_sea_crossing"
+    scenes:
+      - type: "background"
+        art: "art/backgrounds/red_sea.png"
+      - type: "music"
+        track: "audio/music/miracle.ogg"
+      - type: "verse"
+        text:
+          hebrew: "וַיֵּט מֹשֶׁה אֶת-יָדוֹ עַל-הַיָּם"
+          english: "And Moses stretched out his hand over the sea"
+        reference: "Exodus 14:21"
+      - type: "special_effect"
+        effect: "sea_parting"
+        duration: 5.0
+
+cutscene_rules:
+  default_fade_in: 1.0
+  default_fade_out: 1.0
+  text_display_time: 4.0
+  skip_allowed: true
+  language_options:
+    - "hebrew"
+    - "english"
+
+  transitions:
+    fade:
+      duration: 1.0
+    dissolve:
+      duration: 2.0
+
+  audio_settings:
+    music_fade_in: 2.0
+    music_fade_out: 2.0
+    ambient_volume: 0.7
+
+  text_display:
+    font_size: 24
+    hebrew_font: "fonts/hebrew.ttf"
+    english_font: "fonts/english.ttf"
+    verse_style:
+      background_opacity: 0.8
+      padding: 20
+      alignment: "center"

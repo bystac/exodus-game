@@ -1,0 +1,245 @@
+events:
+  red_sea_crossing:
+    id: "evt_red_sea_crossing"
+    title: "The Red Sea Crossing"
+    description: |
+      The Egyptian army approaches from behind, while the vast sea stretches before you.
+      Moses raises his staff as commanded by God. The waters begin to stir...
+
+    trigger_conditions:
+      year: 1
+      month: 1
+      location: "red_sea"
+      required_traits: []
+
+    choices:
+      trust_and_cross:
+        text: "Trust in God and walk between the walls of water"
+        effects:
+          - type: "add_piety"
+            amount: 5
+          - type: "add_trait"
+            trait: "faithful"
+            chance: 0.8
+          - type: "add_reputation"
+            amount: 10
+
+      hesitate_but_follow:
+        text: "Hesitate but follow the crowd"
+        effects:
+          - type: "add_piety"
+            amount: 2
+          - type: "add_trait"
+            trait: "doubter"
+            chance: 0.3
+
+    follow_up_events: ["song_at_sea"]
+
+  waters_of_marah:
+    id: "evt_marah_waters"
+    title: "The Bitter Waters of Marah"
+    description: |
+      After three days without water, the people find a spring,
+      but its waters are too bitter to drink. The people begin to complain.
+
+    trigger_conditions:
+      year: 1
+      month: 2
+      location: "marah"
+      days_since_water: 3
+
+    choices:
+      pray_for_solution:
+        text: "Pray alongside Moses for a solution"
+        requirements:
+          trait: "faithful"
+        effects:
+          - type: "add_piety"
+            amount: 3
+          - type: "add_resource"
+            resource: "water"
+            amount: 5
+
+      join_complaints:
+        text: "Join the complaints against Moses"
+        effects:
+          - type: "reduce_piety"
+            amount: 2
+          - type: "add_trait"
+            trait: "doubter"
+            chance: 0.4
+
+  amalek_war:
+    id: "evt_amalek_battle"
+    title: "War with Amalek"
+    description: |
+      The Amalekites attack the camp without warning.
+      Moses stands on the hilltop with his arms raised,
+      while Joshua leads the fighting force.
+
+    trigger_conditions:
+      year: 1
+      month: 3
+      location: "rephidim"
+
+    choices:
+      join_fighters:
+        text: "Join Joshua's fighting force"
+        requirements:
+          min_strength: 6
+        effects:
+          - type: "add_combat_experience"
+            amount: 10
+          - type: "add_reputation"
+            amount: 5
+          - type: "risk_injury"
+            chance: 0.3
+
+      support_moses:
+        text: "Help support Moses's raised arms"
+        effects:
+          - type: "add_piety"
+            amount: 4
+          - type: "add_trait"
+            trait: "faithful"
+            chance: 0.4
+
+  golden_calf:
+    id: "evt_golden_calf"
+    title: "The Golden Calf"
+    description: |
+      Moses has been on Mount Sinai for forty days.
+      The people grow restless and gather their gold
+      to create an idol to worship.
+
+    trigger_conditions:
+      year: 1
+      month: 4
+      location: "sinai"
+      moses_absence_days: 40
+
+    choices:
+      resist_idolatry:
+        text: "Stand against the idol worship"
+        effects:
+          - type: "add_piety"
+            amount: 8
+          - type: "reduce_reputation"
+            amount: 3
+          - type: "add_trait"
+            trait: "faithful"
+            chance: 0.9
+
+      join_celebration:
+        text: "Join the celebration around the golden calf"
+        effects:
+          - type: "reduce_piety"
+            amount: 10
+          - type: "add_trait"
+            trait: "doubter"
+            chance: 0.9
+          - type: "risk_divine_punishment"
+            chance: 0.7
+
+  twelve_spies:
+    id: "evt_spies_return"
+    title: "Return of the Twelve Spies"
+    description: |
+      The twelve spies return from scouting Canaan.
+      Ten bring fearful reports of giants and fortified cities,
+      while Joshua and Caleb insist the land can be conquered.
+
+    trigger_conditions:
+      year: 2
+      location: "kadesh"
+
+    choices:
+      trust_joshua_caleb:
+        text: "Support Joshua and Caleb's faithful report"
+        effects:
+          - type: "add_piety"
+            amount: 5
+          - type: "add_trait"
+            trait: "faithful"
+            chance: 0.6
+          - type: "add_reputation"
+            amount: -2
+
+      believe_majority:
+        text: "Accept the majority's fearful report"
+        effects:
+          - type: "reduce_piety"
+            amount: 4
+          - type: "add_trait"
+            trait: "doubter"
+            chance: 0.7
+          - type: "add_reputation"
+            amount: 2
+
+  korahs_rebellion:
+    id: "evt_korah_rebellion"
+    title: "Korah's Rebellion"
+    description: |
+      Korah and 250 prominent leaders challenge
+      Moses and Aaron's authority, claiming all
+      the assembly is holy.
+
+    trigger_conditions:
+      year: 2
+      location: "wilderness"
+      min_reputation: 20
+
+    choices:
+      support_moses:
+        text: "Stand with Moses and Aaron"
+        effects:
+          - type: "add_piety"
+            amount: 6
+          - type: "reduce_reputation"
+            amount: 5
+          - type: "add_trait"
+            trait: "faithful"
+            chance: 0.5
+
+      join_rebellion:
+        text: "Join Korah's assembly"
+        effects:
+          - type: "reduce_piety"
+            amount: 8
+          - type: "add_reputation"
+            amount: 3
+          - type: "risk_divine_punishment"
+            chance: 0.9
+
+  bronze_serpent:
+    id: "evt_serpent_plague"
+    title: "The Bronze Serpent"
+    description: |
+      Venomous snakes have invaded the camp,
+      biting many who complained against God.
+      Moses has raised a bronze serpent on a pole.
+
+    trigger_conditions:
+      year: 39
+      location: "wilderness"
+
+    choices:
+      look_at_serpent:
+        text: "Look at the bronze serpent in faith"
+        effects:
+          - type: "heal_snake_bite"
+            chance: 1.0
+          - type: "add_piety"
+            amount: 3
+          - type: "add_trait"
+            trait: "faithful"
+            chance: 0.4
+
+      refuse_to_look:
+        text: "Refuse to look at the serpent"
+        effects:
+          - type: "risk_death"
+            chance: 0.7
+          - type: "add_trait"
+            trait: "doubter"
+            chance: 0.8

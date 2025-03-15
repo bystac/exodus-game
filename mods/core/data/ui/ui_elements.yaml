@@ -1,0 +1,121 @@
+ui_elements:
+  # Main HUD Elements
+  hud:
+    action_points:
+      position: [10, 10]
+      size: [100, 30]
+      style:
+        background: "ui/hud/ap_background.png"
+        font: "fonts/main.ttf"
+        font_size: 16
+        color: "#FFD700"
+      elements:
+        - type: "icon"
+          image: "ui/icons/action_point.png"
+          position: [0, 0]
+          size: [30, 30]
+        - type: "text"
+          position: [35, 5]
+          format: "{current}/{max}"
+
+    year_counter:
+      position: [screen_center, 10]
+      size: [200, 40]
+      style:
+        background: "ui/hud/year_bg.png"
+        font: "fonts/hebrew.ttf"
+        font_size: 20
+      elements:
+        - type: "text"
+          position: [center, center]
+          format: "Year {year} of 40"
+          localization_key: "hud.year_counter"
+
+  # Dialog System
+  dialog:
+    window:
+      size: [800, 200]
+      position: [screen_center, bottom]
+      style:
+        background: "ui/dialog/bg.png"
+        border: "ui/dialog/border.png"
+        opacity: 0.9
+
+    character_name:
+      position: [20, 20]
+      style:
+        font: "fonts/hebrew.ttf"
+        font_size: 18
+        color: "#FFD700"
+
+    text_area:
+      position: [20, 50]
+      size: [760, 120]
+      style:
+        font: "fonts/main.ttf"
+        font_size: 16
+        color: "#FFFFFF"
+        line_height: 1.5
+
+  # Menu Screens
+  main_menu:
+    background: "ui/menu/main_bg.png"
+    music: "audio/music/menu_theme.ogg"
+    buttons:
+      new_game:
+        position: [center, 300]
+        size: [200, 50]
+        style:
+          normal: "ui/buttons/normal.png"
+          hover: "ui/buttons/hover.png"
+          pressed: "ui/buttons/pressed.png"
+        text:
+          localization_key: "menu.new_game"
+          font: "fonts/main.ttf"
+          font_size: 20
+
+ui_rules:
+  # Screen Resolution Support
+  resolution_scaling:
+    base_resolution: [1920, 1080]
+    supported_resolutions:
+      - [1280, 720]
+      - [1920, 1080]
+      - [2560, 1440]
+    scaling_method: "proportional"
+
+  # Theme Support
+  themes:
+    default:
+      primary_color: "#FFD700"
+      secondary_color: "#C0C0C0"
+      text_color: "#FFFFFF"
+      background_color: "#000000"
+
+    desert:
+      primary_color: "#DAA520"
+      secondary_color: "#8B4513"
+      text_color: "#F5DEB3"
+      background_color: "#8B4513"
+
+  # Animation Settings
+  animations:
+    button_hover:
+      duration: 0.2
+      ease: "ease_out_cubic"
+
+    dialog_open:
+      duration: 0.3
+      ease: "ease_out_back"
+
+    hud_flash:
+      duration: 0.5
+      ease: "ease_in_out_quad"
+
+  # Accessibility
+  accessibility:
+    min_font_size: 12
+    max_font_size: 32
+    high_contrast: false
+    screen_reader: false
+    text_to_speech: false

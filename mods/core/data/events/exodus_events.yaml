@@ -1,0 +1,72 @@
+events:
+  manna_discovery:
+    id: "evt_manna_discovery"
+    title: "The First Manna"
+    description: |
+      As the morning dew lifts, you notice something unusual on the ground.
+      Small, white, round things cover the earth like frost.
+      The people around you are asking 'What is it?' (Man Hu?)
+
+    trigger_conditions:
+      year: 1  # First year of exodus
+      month: 2  # Second month
+      location: "wilderness_of_sin"
+      required_traits: []
+
+    choices:
+      gather_manna:
+        text: "Gather the strange substance"
+        requirements: {}
+        effects:
+          - type: "add_resource"
+            resource: "manna"
+            amount: 5
+          - type: "add_piety"
+            amount: 2
+          - type: "add_trait"
+            trait: "faithful"
+            chance: 0.3
+
+      ignore_manna:
+        text: "Ignore it as suspicious"
+        effects:
+          - type: "add_trait"
+            trait: "doubter"
+            chance: 0.4
+          - type: "reduce_piety"
+            amount: 1
+
+    follow_up_events: ["manna_rules"]
+
+  manna_rules:
+    id: "evt_manna_rules"
+    title: "Rules of Manna"
+    description: |
+      Moses announces that no one should keep the manna overnight,
+      and on the sixth day, gather twice as much.
+
+    trigger_conditions:
+      requires_event: "evt_manna_discovery"
+      days_after_parent: 1
+
+    choices:
+      obey_rules:
+        text: "Follow Moses's instructions carefully"
+        effects:
+          - type: "add_piety"
+            amount: 3
+          - type: "add_trait"
+            trait: "faithful"
+            chance: 0.5
+
+      hoard_manna:
+        text: "Store extra manna for later"
+        effects:
+          - type: "add_resource"
+            resource: "spoiled_manna"
+            amount: 2
+          - type: "reduce_piety"
+            amount: 2
+          - type: "add_trait"
+            trait: "doubter"
+            chance: 0.3

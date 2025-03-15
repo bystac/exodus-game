@@ -1,0 +1,60 @@
+mod_info:
+  id: "core"
+  name: "Exodus Core"
+  version: "1.0.0"
+  author: "Exodus Team"
+  description: "Core game content and mechanics"
+  dependencies: []
+  load_order: 0
+
+content_paths:
+  # Game Content
+  characters: "data/characters"
+  locations: "data/locations"
+  events: "data/events"
+  items: "data/items"
+  quests: "data/quests"
+  traits: "data/traits"
+  dialogs: "data/dialogs"
+
+  # Game Systems
+  game_mechanics: "data/game_mechanics"
+  character_creation: "data/character_creation"
+
+  # Assets and UI
+  cutscenes: "data/cutscenes"
+  ui: "data/ui"
+  audio: "data/audio"
+  art: "data/art"
+  localization: "data/localization"
+
+mod_rules:
+  allow_overrides: true
+  merge_strategy:
+    # Game Content
+    traits: "extend"  # Allows adding new traits
+    events: "extend"  # Allows adding new events
+    characters: "extend"  # Allows adding new characters
+    locations: "extend"  # Allows adding new locations
+    items: "extend"  # Allows adding new items
+    quests: "extend"  # Allows adding new quests
+    dialogs: "extend"  # Allows adding new dialogs
+
+    # Game Systems
+    game_mechanics: "merge"  # Carefully merge mechanics changes
+    character_creation: "merge"  # Merge character creation rules
+
+    # Assets and UI
+    ui: "override"  # Allows complete UI replacement
+    cutscenes: "extend"  # Allows adding new cutscenes
+    localization: "merge"  # Merges translation keys
+    audio: "extend"  # Allows adding new audio
+    art: "extend"  # Allows adding new art assets
+
+# Core game settings
+game_settings:
+  max_year: 40
+  action_points_per_turn: 12
+  save_format_version: "1.0"
+  default_language: "english"
+  supported_languages: ["english", "hebrew"]

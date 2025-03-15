@@ -1,0 +1,94 @@
+traits:
+  # Spiritual Traits
+  prophet_apprentice:
+    name: "Prophet's Apprentice"
+    description: "Trained in the ways of divine communication"
+    effects:
+      piety_gain: 3
+      wisdom: 2
+      leadership: 1
+    rare: true
+
+  tribal_elder:
+    name: "Tribal Elder"
+    description: "Respected leader among your tribe"
+    effects:
+      leadership: 3
+      wisdom: 2
+      tribal_reputation: 10
+    requirements:
+      min_age: 30
+
+  desert_survivor:
+    name: "Desert Survivor"
+    description: "Experienced in surviving harsh desert conditions"
+    effects:
+      water_efficiency: 1.5
+      heat_resistance: 2
+      foraging: 1
+
+  manna_gatherer:
+    name: "Skilled Manna Gatherer"
+    description: "Efficient at gathering and preserving manna"
+    effects:
+      manna_gathering: 2
+      resource_efficiency: 1.5
+
+  warrior_of_god:
+    name: "Warrior of God"
+    description: "Fought in battles defending the people"
+    effects:
+      combat_skill: 2
+      piety_gain: 1
+      leadership: 1
+    requirements:
+      min_strength: 7
+
+  # Negative Traits
+  wilderness_fatigue:
+    name: "Wilderness Fatigue"
+    description: "Worn down by years of desert wandering"
+    effects:
+      stamina: -2
+      morale: -1
+    gain_conditions:
+      years_in_desert: 10
+
+  egypt_nostalgia:
+    name: "Egyptian Nostalgia"
+    description: "Constantly reminiscing about life in Egypt"
+    effects:
+      piety_gain: -2
+      morale: -1
+    conflicts_with: ["faithful"]
+
+  water_paranoia:
+    name: "Water Paranoia"
+    description: "Obsessively hoards water after experiencing thirst"
+    effects:
+      water_consumption: 2
+      trust: -1
+    gain_conditions:
+      days_without_water: 3
+
+  # Special Traits
+  levite:
+    name: "Levite"
+    description: "Member of the priestly tribe"
+    effects:
+      piety_gain: 2
+      tabernacle_service: 2
+      tribal_reputation: 5
+    rare: true
+    background_restricted: true
+
+  artisan_of_god:
+    name: "Divine Artisan"
+    description: "Skilled in creating holy items for the Tabernacle"
+    effects:
+      crafting_skill: 3
+      piety_gain: 1
+      artistic_ability: 2
+    requirements:
+      min_dexterity: 7
+      min_piety: 30

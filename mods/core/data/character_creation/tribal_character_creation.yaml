@@ -1,0 +1,170 @@
+character_creation:
+  tribal_selection:
+    type: "required"
+    description: "Choose your tribe of origin"
+    affects:
+      - "starting_stats"
+      - "available_traits"
+      - "special_abilities"
+      - "tribal_relations"
+
+  background_options:
+    pure_lineage:
+      description: "Both parents from the same tribe"
+      effects:
+        tribal_trait_chance: 1.2
+        tribal_skill_bonus: 1.5
+        tribal_reputation: +10
+
+    mixed_heritage:
+      description: "Parents from different tribes"
+      effects:
+        tribal_trait_chance: 0.8
+        adaptability: +2
+        diplomatic_bonus: +1
+        access_to_secondary_tribe: true
+
+    convert_family:
+      description: "Family joined during Exodus from Egypt"
+      effects:
+        tribal_trait_chance: 0.6
+        wisdom: +2
+        piety_gain: +1
+        tribal_reputation: -5
+
+  age_groups:
+    youth:
+      range: [15, 20]
+      effects:
+        learning_speed: 1.2
+        stamina: +2
+        wisdom: -1
+
+    young_adult:
+      range: [21, 30]
+      effects:
+        balanced_stats: true
+        skill_points: +2
+
+    mature:
+      range: [31, 40]
+      effects:
+        wisdom: +2
+        learning_speed: 0.8
+        starting_skills: +1
+
+  special_cases:
+    levite_rules:
+      if_tribe: "levi"
+      additional_options:
+        priestly_training:
+          description: "Early training in priestly duties"
+          effects:
+            piety: +2
+            ritual_knowledge: +2
+            starting_position: "tabernacle_apprentice"
+
+        musical_service:
+          description: "Training in Temple music"
+          effects:
+            musical_skill: +2
+            charisma: +1
+            starting_position: "temple_musician"
+
+    judah_rules:
+      if_tribe: "judah"
+      additional_options:
+        leadership_training:
+          description: "Groomed for leadership"
+          effects:
+            leadership: +2
+            charisma: +2
+            starting_position: "tribal_leader_apprentice"
+
+    joseph_tribes_rules:
+      if_tribe: ["ephraim", "manasseh"]
+      additional_options:
+        frontier_life:
+          description: "Life on the tribal frontier"
+          effects:
+            survival: +2
+            combat: +1
+            starting_position: "frontier_scout"
+
+  starting_equipment:
+    base_items:
+      all_tribes:
+        - "basic_clothing"
+        - "water_skin"
+        - "walking_staff"
+
+    tribal_specific:
+      levi:
+        - "priestly_garments"
+        - "sacred_texts"
+
+      judah:
+        - "leadership_token"
+        - "fine_garments"
+
+      gad:
+        - "basic_weapons"
+        - "shield"
+
+      asher:
+        - "crafting_tools"
+        - "trading_goods"
+
+      zebulun:
+        - "merchant_scales"
+        - "navigation_tools"
+
+  relationship_modifiers:
+    tribal_unity:
+      same_tribe: +20
+      allied_tribes: +10
+      rival_tribes: -10
+
+    special_relations:
+      levi:
+        all_tribes: +5  # Due to religious role
+
+      judah:
+        leadership_bonus: +10
+
+      joseph_tribes:
+        ephraim_manasseh: +15  # Brother tribes
+
+character_progression:
+  tribal_skill_development:
+    native_skills:
+      learning_speed: 1.5
+      mastery_cap: 10
+
+    foreign_skills:
+      learning_speed: 0.8
+      mastery_cap: 8
+
+    universal_skills:
+      learning_speed: 1.0
+      mastery_cap: 10
+
+  trait_development:
+    tribal_traits:
+      unlock_conditions:
+        min_level: 5
+        tribal_reputation: 20
+
+    mixed_heritage_bonuses:
+      skill_versatility: true
+      diplomatic_advantage: true
+
+  special_achievements:
+    tribal_mastery:
+      requirements:
+        tribal_skills_maxed: 3
+      rewards:
+        title: "Tribal Expert"
+        bonus_effects:
+          teaching: +2
+          tribal_reputation: +10
