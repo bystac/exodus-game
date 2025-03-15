@@ -9,18 +9,22 @@ import com.badlogic.gdx.backends.iosrobovm.IOSApplication
 import com.badlogic.gdx.backends.iosrobovm.IOSApplicationConfiguration
 import biz.dvlop.exudos.Main
 
-/** Launches the iOS (RoboVM) application with MetalANGLE backend for better performance. */
+/**
+ * Launches the iOS (RoboVM) application with MetalANGLE backend for better performance.
+ * MetalANGLE translates OpenGL calls to Metal, which is Apple's preferred graphics API.
+ * This provides better performance and future-proofing as Apple has deprecated OpenGL.
+ */
 class IOSLauncher : IOSApplication.Delegate() {
     override fun createApplication(): IOSApplication {
         return IOSApplication(Main(), IOSApplicationConfiguration().apply {
             // Configure your application here.
-            // Higher performance settings for iOS
+            // Higher performance settings for iOS with MetalANGLE
             useAccelerometer = true
             useCompass = false
 
-            // Use Metal-based rendering for better performance
+            // MetalANGLE configuration
             useGL30 = true // Enable OpenGL ES 3.0
-            preferredFramesPerSecond = 60 // Can be set higher for Metal
+            preferredFramesPerSecond = 60 // Can be set higher for Metal (e.g., 120 for ProMotion displays)
         })
     }
 
